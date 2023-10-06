@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",                  // куда будет производиться сборка(не важно так как собирается вебпаком)
+    "noImplicitAny": true,                // не позволяет использовать переменные без использования типа
+    "module": "es6",                      //какая будет использоваться модульная система
+    "target": "es5",                      // в какой js код будет компилироваться сборка
+    "jsx": "react",                       // позволяет использовать react обрызный код
+    "allowJs": true,                      //обрабатывать и js и ts
+    "moduleResolution": "node",
+    "esModuleInterop": true,              // использоваться import и export
+    "allowSyntheticDefaultImports": true  //позволяет использовать дефолтные импорты
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  }
+}
