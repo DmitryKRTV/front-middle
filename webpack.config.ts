@@ -3,14 +3,13 @@ import {buildWebpackConfig} from "./config/build/buildWebpackConfig";
 import {BuildEnv, BuildPaths} from "./config/build/types/config";
 import path from "path";
 
-// __dirname, 'src', 'index.ts' - эквивалент "./src/index.ts"
+// __dirname, 'src', 'index.tsx' - эквивалент "./src/index.tsx"
 //плагины - классы
-
-
-
+// сборка это функция и соответственно в параметры сборки приходят переменные окружения,
+// задаваемые через командную строку при запуске команды
 export default (env: BuildEnv) => {
     const paths: BuildPaths = {
-        entry: path.resolve(__dirname, 'src', 'index.ts'),
+        entry: path.resolve(__dirname, 'src', 'index.tsx'),
         build: path.resolve(__dirname, 'build'),
         html: path.resolve(__dirname, 'public', 'index.html')
     }
