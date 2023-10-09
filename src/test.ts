@@ -1,3 +1,3 @@
 export function someFn(a: number) {
-    console.log(a + a + 'textadasdsad')
+    console.log(a + a + 'textadasdsссad')
 }

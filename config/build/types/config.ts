@@ -11,6 +11,12 @@ export interface BuildOption {
     mode: BuildMode,
     paths: BuildPaths
     isDev: boolean
+    port: number
+}
+
+export interface BuildEnv {
+    mode: BuildMode,
+    port: number
 }
 
 // Файл с типами для построения опций для билда
