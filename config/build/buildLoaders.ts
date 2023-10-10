@@ -1,8 +1,12 @@
 import webpack from "webpack";
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import {BuildOption} from "./types/config";
 
 // loader - сущности обрабатывающие файлы, которые не являются js файлами
 // порядок loader'ов важен!
-export function buildLoaders():webpack.RuleSetRule[] {
+export function buildLoaders(options: BuildOption):webpack.RuleSetRule[] {
+
+    const {isDev} = options
 
     //есили не использовать этот loader, то для транспиляции JS es 6+ в старые версии нужно использовать babel
     const  typescriptLoader = {
@@ -14,12 +18,18 @@ export function buildLoaders():webpack.RuleSetRule[] {
         const cssLoader =  {
                 test: /\.s[ac]ss$/i,
                 use: [
-                    // Creates `style` nodes from JS strings
-                    "style-loader",
-                    // Translates CSS into CommonJS
-                    "css-loader",
-                    // Compiles Sass to CSS
-                    "sass-loader",
+                    isDev ? 'style-loader' : MiniCssExtractPlugin.loader,  // Creates `style` nodes from JS strings
+                    {
+                        loader: "css-loader",
+                        options: {
+                            modules: {
+                                auto: (resPath: string) => Boolean(resPath.includes('.module.')),
+                                localIdentName: isDev
+                                    ? '[path][name]__[local]--[hash:base64:5]' : '[hash:base64:8]'
+                            },
+                        }
+                    },                                            // Translates CSS into CommonJS
+                    "sass-loader",                                                 // Compiles Sass to CSS
                 ],
             }
 
