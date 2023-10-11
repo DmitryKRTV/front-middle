@@ -4,6 +4,10 @@ import {App} from "./App";
 import {createBrowserRouter, Link, RouterProvider,} from "react-router-dom";
 import {AboutPageAsync} from "./pages/AboutPage/AboutPage.async";
 import {MainPageAsync} from "./pages/MainPage/MainPage.async";
+import { createRoot } from 'react-dom/client';
+import ThemeProvider from "./theme/themeProvider";
+const container = document.getElementById('root');
+const root = createRoot(container);
 
 const router = createBrowserRouter([
     {
@@ -26,8 +30,9 @@ const router = createBrowserRouter([
     },
 ]);
 
-render(
-    // <App/>,
-    <Suspense fallback={<div>...loading</div>}><RouterProvider router={router}/></Suspense>,
-    document.getElementById(`root`)
-)
+root.render(
+    <ThemeProvider>
+    <Suspense fallback={<div>...loading</div>}>
+        <RouterProvider router={router}/>
+    </Suspense>
+    </ThemeProvider>)
