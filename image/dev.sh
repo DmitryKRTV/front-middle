@@ -1,7 +1,6 @@
 set -a 
 
 . ./.env
-
 . ./.vars
 
 set +a
@@ -17,7 +16,6 @@ IS_EXIST=$(docker ps | grep "$CONTAINER")
 if [[ ! -z $IS_EXIST ]]; then
 
 	echo "is exist $IS_EXIST"
-
 	docker exec -it $CONTAINER bash -c "sudo -iu $PUSER"
 
 	exit
