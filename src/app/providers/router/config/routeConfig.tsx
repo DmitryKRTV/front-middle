@@ -1,33 +1,21 @@
 import { RouteProps } from 'react-router-dom';
-import {
-    AppRoutes,
-    getRouteAbout,
-    getRouteDefault,
-    getRouteMain,
-} from './const';
 import { Link } from 'react-router-dom';
 import { MainPage } from '@/pages/MainPage';
 import { AboutPage } from '@/pages/AboutPage';
+import { getRoute, Routes } from '@/shared/config/routerConfig';
 
 export type AppRoutesProps = RouteProps & {
     // authOnly?: boolean;
     // roles?: UserRole[];
 };
 
-export const RouteConfig: Record<AppRoutes, AppRoutesProps> = {
-    [AppRoutes.DEFAULT]: {
-        path: getRouteDefault(),
-        element: <div>
-        <Link to={getRouteAbout()}>About Page</Link>
-        <Link to={getRouteMain()}>Main Page</Link>
-    </div>,
-    },
-    [AppRoutes.MAIN]: {
-        path: getRouteMain(),
+export const RouteConfig: Record<Routes, AppRoutesProps> = {
+    [Routes.MAIN]: {
+        path: getRoute(Routes.MAIN),
         element: <MainPage />,
     },
-    [AppRoutes.ABOUT]: {
-        path: getRouteAbout(),
+    [Routes.ABOUT]: {
+        path: getRoute(Routes.ABOUT),
         element: <AboutPage />,
     },
 };
