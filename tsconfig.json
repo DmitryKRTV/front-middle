@@ -8,6 +8,9 @@
     "allowJs": true,                      //обрабатывать и js и ts
     "moduleResolution": "node",
     "baseUrl": ".",                       // Для абсолютного импорта
+    "paths": {
+      "@/*": ["./src/*"]                  // Если ставишь alias сюда его нужно указывать
+    },
     "esModuleInterop": true,              // использоваться import и export
     "allowSyntheticDefaultImports": true  //позволяет использовать дефолтные импорты
   },

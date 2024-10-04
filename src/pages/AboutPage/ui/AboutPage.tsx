@@ -1,7 +1,7 @@
-import React, {ReactNode} from 'react';
+import {ReactNode} from 'react';
 
 interface AboutPageProps {
-    children: ReactNode
+    children?: ReactNode
 }
 
 export const AboutPage = (props: AboutPageProps) => {
