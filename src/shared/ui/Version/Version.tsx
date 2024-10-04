@@ -1,7 +1,7 @@
 import { classNames } from '@/shared/lib/classNames/classNames'
-import cls from './Version.module.scss'
 import { useEffect, useState } from 'react'
-import raw from './version.txt'
+import cls from './Version.module.scss'
+import raw from '/version.txt'
 
 interface VersionProps {
     className?: string
