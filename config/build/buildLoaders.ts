@@ -5,8 +5,16 @@ import {BuildOption} from "./types/config";
 // loader - сущности обрабатывающие файлы, которые не являются js файлами
 // порядок loader'ов важен!
 export function buildLoaders(options: BuildOption):webpack.RuleSetRule[] {
-
     const {isDev} = options
+
+    const fileLoader = {
+        test: /\.(png|jpe?g|gif|txt)$/i,
+        use: [
+            {
+                loader: 'file-loader',
+            },
+        ],
+    };
 
     //есили не использовать этот loader, то для транспиляции JS es 6+ в старые версии нужно использовать babel
     const  typescriptLoader = {
@@ -34,6 +42,7 @@ export function buildLoaders(options: BuildOption):webpack.RuleSetRule[] {
             }
 
     return [
+        fileLoader,
         typescriptLoader,
         cssLoader
         ]

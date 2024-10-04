@@ -16,7 +16,7 @@ vsCode snippet:
 			"}",
 			"",
 			"export const ${TM_FILENAME_BASE} = (props: ${TM_FILENAME_BASE}Props) => {",
-            "const { className } = props",
+            "    const { className } = props",
 			"",
 			"    return <div className={classNames(cls.${TM_FILENAME_BASE}, {}, [className])}>",
 			"    </div>",
