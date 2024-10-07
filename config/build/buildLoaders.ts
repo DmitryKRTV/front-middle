@@ -16,6 +16,13 @@ export function buildLoaders(options: BuildOption):webpack.RuleSetRule[] {
         ],
     };
 
+    const svgLoader = {
+        test: /\.svg$/i,
+        issuer: /\.[jt]sx?$/,
+        use: ['@svgr/webpack'],
+    };
+
+
     //есили не использовать этот loader, то для транспиляции JS es 6+ в старые версии нужно использовать babel
     const  typescriptLoader = {
             test: /\.tsx?$/,                            // поиск файлов
@@ -43,6 +50,7 @@ export function buildLoaders(options: BuildOption):webpack.RuleSetRule[] {
 
     return [
         fileLoader,
+        svgLoader,
         typescriptLoader,
         cssLoader
         ]
