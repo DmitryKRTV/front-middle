@@ -6,6 +6,7 @@ export function buildDevServer(options: BuildOption): DevServerConfiguration {
     return {
         port: options.port,     // на каком порту откроется
         open: true,              // открывать страницу с приложением
-        historyApiFallback: true // убирает ошибку cannot get
+        historyApiFallback: true, // убирает ошибку cannot get
+        hot: true
     }
 }
