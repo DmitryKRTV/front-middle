@@ -1,4 +1,4 @@
-import { getRoute, Routes } from "@/shared/config/routerConfig"
+import { getRoute, Routes } from "@/shared/config/routeConfig/routerConfig"
 import { classNames } from "@/shared/lib/classNames/classNames"
 import cls from "./Navbar.module.scss"
 import { AppLink, AppLinkTheme } from "@/shared/ui/AppLink/AppLink"

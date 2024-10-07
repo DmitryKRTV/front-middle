@@ -14,6 +14,9 @@ export function buildPlugins(options: BuildOption): webpack.WebpackPluginInstanc
         new MiniCssExtractPlugin({
             filename: 'css/[name].[contenthash:8].css',       // путь куда ложить
             chunkFilename: 'css/[name].[contenthash:8].css'   // для работы асинхронного кода
-        })                            // для отделения css от js
+        }),                            // для отделения css от js
+        new webpack.DefinePlugin({
+            __IS_DEV__: JSON.stringify(options.isDev),
+        })
     ]
 }

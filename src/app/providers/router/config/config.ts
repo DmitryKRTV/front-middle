@@ -1,4 +1,4 @@
-import { Routes } from "@/shared/config/routerConfig";
+import { Routes } from "@/shared/config/routeConfig/routerConfig";
 
 // Routes могут быть пустым, а 
 // export const enum AppRoutes {

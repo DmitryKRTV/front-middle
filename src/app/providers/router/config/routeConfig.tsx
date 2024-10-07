@@ -2,7 +2,7 @@ import { RouteProps } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { MainPage } from '@/pages/MainPage';
 import { AboutPage } from '@/pages/AboutPage';
-import { getRoute, Routes } from '@/shared/config/routerConfig';
+import { getRoute, Routes } from '@/shared/config/routeConfig/routerConfig';
 
 export type AppRoutesProps = RouteProps & {
     // authOnly?: boolean;
