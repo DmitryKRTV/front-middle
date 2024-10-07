@@ -23,6 +23,25 @@ export function buildLoaders(options: BuildOption):webpack.RuleSetRule[] {
         use: ['@svgr/webpack'],
     };
 
+    const babelLoader = {
+        test: /\.(js|jsx|tsx)$/,
+        exclude: /node_modules/,
+        use: {
+            loader: "babel-loader",
+            options: {
+                // presets: ['@babel/preset-env'],
+                // "plugins": [
+                //     [
+                //         "i18next-extract",
+                //         {
+                //             locales: ['ru', 'en'],
+                //             keyAsDefaultValue: true
+                //         }
+                //     ],
+                // ]
+            }
+        }
+    }
 
     //есили не использовать этот loader, то для транспиляции JS es 6+ в старые версии нужно использовать babel
     const  typescriptLoader = {
@@ -66,6 +85,7 @@ export function buildLoaders(options: BuildOption):webpack.RuleSetRule[] {
         fileLoader,
         svgLoader,
         typescriptLoader,
+        babelLoader,
         cssLoader
     ]
 }
