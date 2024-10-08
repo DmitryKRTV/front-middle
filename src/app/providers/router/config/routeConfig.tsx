@@ -1,6 +1,7 @@
 import { RouteProps } from 'react-router-dom';
 import { MainPage } from '@/pages/MainPage';
 import { AboutPage } from '@/pages/AboutPage';
+import { NotFoundPage } from '@/pages/NotFoundPage';
 import { getRoute, Routes } from '@/shared/config/routeConfig/routerConfig';
 
 export type AppRoutesProps = RouteProps & {
@@ -16,6 +17,10 @@ export const RouteConfig: Record<Routes, AppRoutesProps> = {
     [Routes.ABOUT]: {
         path: getRoute(Routes.ABOUT),
         element: <AboutPage />,
+    },
+    [Routes.NOTFOUND]: {
+        path: getRoute(Routes.NOTFOUND),
+        element: <NotFoundPage />,
     },
 };
 

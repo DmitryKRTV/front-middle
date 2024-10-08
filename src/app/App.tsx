@@ -6,13 +6,14 @@ import { classNames } from '@/shared/lib/classNames';
 import { Version } from '@/shared/ui/Version/Version';
 import { Sidebar } from '@/widgets/Sidebar';
 import { Suspense } from 'react';
+import { PageLoader } from '@/shared/ui/PageLoader';
 
 export const App = () => {
     const {theme} = useTheme();
 
     return (
         <div className={classNames(`app ${theme}`, {},[theme])}>
-            <Suspense fallback="">
+            <Suspense fallback={<PageLoader/>}>
                 <Navbar/>
                 <div className="content-page">
                     <Sidebar />

@@ -1,7 +1,6 @@
 
-// Routes могут быть пустым, а 
+// Routes могут быть пустым
 // export const enum AppRoutes {
-//     DEFAULT = Routes.DEFAULT,
 //     MAIN = Routes.MAIN,
 //     ABOUT = Routes.ABOUT,
 // }
