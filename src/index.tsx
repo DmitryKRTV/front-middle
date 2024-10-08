@@ -1,4 +1,3 @@
-import {render} from "react-dom";
 import React, {Suspense} from "react";
 import {App} from "./app/App";
 import {BrowserRouter} from "react-router-dom";
@@ -16,4 +15,4 @@ root.render(
             </Suspense>
         </ThemeProvider>
     </BrowserRouter>
-)
+);

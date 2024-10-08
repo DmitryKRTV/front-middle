@@ -1,5 +1,5 @@
-import { classNames } from '@/shared/lib/classNames/classNames'
-import cls from './AppLink.module.scss'
+import { classNames } from '@/shared/lib/classNames/classNames';
+import cls from './AppLink.module.scss';
 import { ReactNode } from 'react';
 import { Link, LinkProps } from 'react-router-dom';
 
@@ -23,7 +23,7 @@ export const AppLink = (props: AppLinkProps) => {
         children,
         theme = AppLinkTheme.PRIMARY,
         ...otherProps
-    } = props
+    } = props;
 
     return <Link 
         to={to}
@@ -31,5 +31,5 @@ export const AppLink = (props: AppLinkProps) => {
         {...otherProps}
     >
         {children}
-    </Link>
-}
+    </Link>;
+};

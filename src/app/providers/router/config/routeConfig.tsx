@@ -1,5 +1,4 @@
 import { RouteProps } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 import { MainPage } from '@/pages/MainPage';
 import { AboutPage } from '@/pages/AboutPage';
 import { getRoute, Routes } from '@/shared/config/routeConfig/routerConfig';
@@ -25,10 +24,10 @@ export const RouteConfig: Record<Routes, AppRoutesProps> = {
 //     {
 //         path: "/",
 //         element: (
-            // <div>
-            //     <Link to="about">About Page</Link>
-            //     <Link to="main">Main Page</Link>
-            // </div>
+// <div>
+//     <Link to="about">About Page</Link>
+//     <Link to="main">Main Page</Link>
+// </div>
 //         ),
 //     },
 //     {

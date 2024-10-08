@@ -1,4 +1,4 @@
-import {ReactNode} from 'react';
+import {ReactNode} from "react";
 import { useTranslation } from 'react-i18next';
 
 interface MainPageProps {
@@ -7,7 +7,7 @@ interface MainPageProps {
 
 export const MainPage = (props: MainPageProps) => {
     const {t} = useTranslation('main');
-    const {children} = props
+    const {children} = props;
 
     return (
         <div>
@@ -17,5 +17,5 @@ export const MainPage = (props: MainPageProps) => {
     );
 };
 
-export default MainPage
+export default MainPage;
 

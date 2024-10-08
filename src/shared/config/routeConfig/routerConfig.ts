@@ -3,4 +3,4 @@ export enum Routes {
     ABOUT = 'about',
 }
 
-export const getRoute = (route: Routes) => '/' + route
+export const getRoute = (route: Routes) => '/' + route;

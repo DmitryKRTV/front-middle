@@ -26,3 +26,17 @@ vsCode snippet:
 	}
 }
 ```
+
+vsCode settings.json: 
+```
+{
+    "i18n-ally.localesPaths": [
+        "public/locales",
+        "src/shared/config/i18n"
+    ],
+    "editor.codeActionsOnSave": {
+        "source.fixAll": "explicit"
+    },
+    "eslint.validate": ["javascript"]
+}
+```

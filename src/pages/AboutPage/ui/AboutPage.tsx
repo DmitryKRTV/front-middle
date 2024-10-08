@@ -7,7 +7,7 @@ interface AboutPageProps {
 
 export const AboutPage = (props: AboutPageProps) => {
     const {t} = useTranslation('about');
-    const {children} = props
+    const {children} = props;
 
     return (
         <div>
@@ -17,4 +17,4 @@ export const AboutPage = (props: AboutPageProps) => {
     );
 };
 
-export default AboutPage
+export default AboutPage;

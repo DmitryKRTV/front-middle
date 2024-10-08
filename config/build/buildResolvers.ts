@@ -11,5 +11,5 @@ export function buildResolvers(options: BuildOption): webpack.ResolveOptions {
             "@": options.paths.src
         },
         mainFiles: ['index'],  
-    }
+    };
 }

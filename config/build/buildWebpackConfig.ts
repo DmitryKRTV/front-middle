@@ -6,7 +6,7 @@ import {buildResolvers} from "./buildResolvers";
 import {buildDevServer} from "./buildDevServer";
 
 export function buildWebpackConfig(options: BuildOption): webpack.Configuration {
-    const {mode, paths, isDev} = options
+    const {mode, paths, isDev} = options;
 
     return {                      // webpack.Configuration позволяет получить подсказки
         mode,                                    // отвечает за размер собранного файла
@@ -23,5 +23,5 @@ export function buildWebpackConfig(options: BuildOption): webpack.Configuration 
         resolve: buildResolvers(options),
         devtool: isDev ? 'inline-source-map' : undefined, // для отслеживания ошибок
         devServer: isDev ? buildDevServer(options) : undefined,
-    }
+    };
 }
