@@ -1,9 +1,9 @@
-import globals from "globals";
 import pluginJs from "@eslint/js";
-import tseslint from "typescript-eslint";
+import i18next from "eslint-plugin-i18next";
 import pluginReact from "eslint-plugin-react";
 import unusedImports from "eslint-plugin-unused-imports";
-import i18next from "eslint-plugin-i18next";
+import globals from "globals";
+import tseslint from "typescript-eslint";
 
 const customGlobals = {
     __IS_DEV__: true,
@@ -53,7 +53,18 @@ export default [
                     ignoreComments: true,
                 },
             ],
-            'i18next/no-literal-string': 'warn'
+            'i18next/no-literal-string': ['warn', {
+                markupOnly: true,
+                ignoreAttribute: ['data-testid'],
+            },]
         },
+        overrides: [
+            {
+                files: ['**/src/**/*.test.{ts,tsx}'],
+                rules: {
+                    'i18next/no-literal-string': 'off',
+                },
+            },
+        ],
     }
 ];

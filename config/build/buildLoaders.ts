@@ -1,7 +1,7 @@
-import webpack from "webpack";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import {BuildOption} from "./types/config";
 import ReactRefreshTypeScript from 'react-refresh-typescript';
+import webpack from "webpack";
+import { BuildOption } from "./types/config";
 
 // loader - сущности обрабатывающие файлы, которые не являются js файлами
 // порядок loader'ов важен!
@@ -30,15 +30,19 @@ export function buildLoaders(options: BuildOption):webpack.RuleSetRule[] {
             loader: "babel-loader",
             options: {
                 // presets: ['@babel/preset-env'],
-                // "plugins": [
-                //     [
-                //         "i18next-extract",
-                //         {
-                //             locales: ['ru', 'en'],
-                //             keyAsDefaultValue: true
-                //         }
-                //     ],
-                // ]
+                "plugins": [
+                    "@babel/plugin-transform-runtime",
+                    [
+                        "@babel/plugin-transform-typescript"
+                    ],
+                    // [
+                    //     "i18next-extract",
+                    //     {
+                    //         locales: ['ru', 'en'],
+                    //         keyAsDefaultValue: true
+                    //     }
+                    // ],
+                ]
             }
         }
     };

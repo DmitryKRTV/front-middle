@@ -1,5 +1,5 @@
-import {BuildOption} from "./types/config";
-import type {Configuration as DevServerConfiguration} from 'webpack-dev-server';
+import type { Configuration as DevServerConfiguration } from 'webpack-dev-server';
+import { BuildOption } from "./types/config";
 
 //сервер для автоматической пересборки
 export function buildDevServer(options: BuildOption): DevServerConfiguration {
@@ -7,6 +7,9 @@ export function buildDevServer(options: BuildOption): DevServerConfiguration {
         port: options.port,     // на каком порту откроется
         open: true,              // открывать страницу с приложением
         historyApiFallback: true, // убирает ошибку cannot get
-        hot: true
+        hot: true,
+        client: {
+            overlay: false,
+        }
     };
 }

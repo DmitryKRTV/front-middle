@@ -2,7 +2,7 @@
   "compilerOptions": {
     "outDir": "./dist/",                  // куда будет производиться сборка(не важно так как собирается вебпаком)
     "noImplicitAny": true,                // не позволяет использовать переменные без использования типа
-    "module": "esnext",                      //какая будет использоваться модульная система
+    "module": "ESNext",                      //какая будет использоваться модульная система
     "target": "es5",                      // в какой js код будет компилироваться сборка
     "jsx": "react-jsx",                       // позволяет использовать react образный код
     "allowJs": true,                      //обрабатывать и js и ts
@@ -18,5 +18,13 @@
     "compilerOptions": {
       "module": "CommonJS"
     }
-  }
+  },
+  "include": [
+    "./config/jest/setupTests.ts",
+    "./src/**/*.ts",
+    "./src/**/*.tsx",
+  ],
+  "exclude": [
+      "node_modules"
+  ]
 }

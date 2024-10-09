@@ -1,4 +1,5 @@
-import {ReactNode} from "react";
+import { BugButton } from "@/app/providers/ErrorBoundary";
+import { ReactNode } from "react";
 import { useTranslation } from 'react-i18next';
 
 interface MainPageProps {
@@ -6,11 +7,12 @@ interface MainPageProps {
 }
 
 export const MainPage = (props: MainPageProps) => {
-    const {t} = useTranslation('main');
+    const {t} = useTranslation();
     const {children} = props;
 
     return (
         <div>
+            <BugButton/>
             {t('Главная страница')}
             {children}
         </div>

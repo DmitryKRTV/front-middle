@@ -1,8 +1,9 @@
-import HtmlWebpackPlugin from "html-webpack-plugin";
-import webpack from "webpack";
-import {BuildOption} from "./types/config";
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
+import HtmlWebpackPlugin from "html-webpack-plugin";
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import webpack from "webpack";
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+import { BuildOption } from "./types/config";
 
 export function buildPlugins(options: BuildOption): webpack.WebpackPluginInstance[] {
     const {paths} = options;
@@ -17,6 +18,11 @@ export function buildPlugins(options: BuildOption): webpack.WebpackPluginInstanc
         }),                            // для отделения css от js
         new webpack.DefinePlugin({
             __IS_DEV__: JSON.stringify(options.isDev),
+        }),
+        new BundleAnalyzerPlugin({
+            analyzerMode: 'server',
+            generateStatsFile: true,
+            statsOptions: { source: false }
         })
     ];
 
