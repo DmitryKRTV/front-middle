@@ -55,16 +55,14 @@ export default [
             ],
             'i18next/no-literal-string': ['warn', {
                 markupOnly: true,
-                ignoreAttribute: ['data-testid'],
-            },]
+                ignoreAttribute: ['data-testid', 'to'],
+            }],
         },
-        overrides: [
-            {
-                files: ['**/src/**/*.test.{ts,tsx}'],
-                rules: {
-                    'i18next/no-literal-string': 'off',
-                },
-            },
-        ],
-    }
+    },
+    {
+        files: ['**/src/**/*.test.{ts,tsx}'],
+        rules: {
+            'i18next/no-literal-string': 'off',
+        },
+    },
 ];

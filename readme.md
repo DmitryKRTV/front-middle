@@ -23,8 +23,43 @@ vsCode snippet:
 			"},"
 		],
 		"description": "Typescript FSD React component"
+	},
+	"Storybook React component": {
+"prefix": ["sb"],
+		"body": [
+			"import { Theme } from '@/app/providers/theme';",
+			"import { ThemeDecorator } from '@/shared/config/storybook/Decorators/ThemeDecorator';",
+			"import type { Meta, StoryObj } from '@storybook/react';",
+			"import { ${TM_FILENAME_BASE/(.*?)\\..*/$1/} } from './${TM_FILENAME_BASE/(.*?)\\..*/$1/}';",
+			"",
+			"const meta = {",
+			"   title: '$1/${TM_FILENAME_BASE/(.*?)\\..*/$1/}',",
+			"   component: ${TM_FILENAME_BASE/(.*?)\\..*/$1/},",
+			"   parameters: {",
+			"      layout: '',",
+			"   },",
+			"   argTypes: {},",
+			"   args: {},",
+			"   } satisfies Meta<typeof ${TM_FILENAME_BASE/(.*?)\\..*/$1/}>;",
+			"",
+			"export default meta;",
+			"type Story = StoryObj<typeof meta>;",
+			"",
+			"export const Primary: Story = {",
+			"   args: {},",
+			"};",
+			"",
+			"export const SecondaryDark: Story = {",
+			"   args: {},",
+			"   decorators: [ThemeDecorator(Theme.DARK)]",
+			"};"
+
+		],
+		"description": "Typescript FSD React component"
 	}
 }
+
+
 ```
 
 vsCode settings.json: 

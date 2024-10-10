@@ -1,6 +1,8 @@
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import ReactRefreshTypeScript from 'react-refresh-typescript';
 import webpack from "webpack";
+import { createdCssLoader } from './loaders/createCssLoader';
+import { createFileLoader } from './loaders/createFileLoader';
+import { createSVGLoader } from './loaders/createSVGLoader';
 import { BuildOption } from "./types/config";
 
 // loader - сущности обрабатывающие файлы, которые не являются js файлами
@@ -8,20 +10,8 @@ import { BuildOption } from "./types/config";
 export function buildLoaders(options: BuildOption):webpack.RuleSetRule[] {
     const {isDev} = options;
 
-    const fileLoader = {
-        test: /\.(png|jpe?g|gif|txt)$/i,
-        use: [
-            {
-                loader: 'file-loader',
-            },
-        ],
-    };
-
-    const svgLoader = {
-        test: /\.svg$/i,
-        issuer: /\.[jt]sx?$/,
-        use: ['@svgr/webpack'],
-    };
+    const fileLoader = createFileLoader();
+    const svgLoader = createSVGLoader();
 
     const babelLoader = {
         test: /\.(js|jsx|tsx)$/,
@@ -67,23 +57,7 @@ export function buildLoaders(options: BuildOption):webpack.RuleSetRule[] {
         exclude: /node_modules/,                    // не искать тут
     };
 
-    const cssLoader =  {
-        test: /\.s[ac]ss$/i,
-        use: [
-            isDev ? 'style-loader' : MiniCssExtractPlugin.loader,  // Creates `style` nodes from JS strings
-            {
-                loader: "css-loader",
-                options: {
-                    modules: {
-                        auto: (resPath: string) => Boolean(resPath.includes('.module.')),
-                        localIdentName: isDev
-                            ? '[path][name]__[local]--[hash:base64:5]' : '[hash:base64:8]'
-                    },
-                }
-            },                                            // Translates CSS into CommonJS
-            "sass-loader",                                                 // Compiles Sass to CSS
-        ],
-    };
+    const cssLoader = createdCssLoader(options.isDev);
 
     return [
         fileLoader,
