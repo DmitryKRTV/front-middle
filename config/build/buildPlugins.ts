@@ -19,16 +19,17 @@ export function buildPlugins(options: BuildOption): webpack.WebpackPluginInstanc
         new webpack.DefinePlugin({
             __IS_DEV__: JSON.stringify(options.isDev),
         }),
-        new BundleAnalyzerPlugin({
-            analyzerMode: 'server',
-            generateStatsFile: true,
-            statsOptions: { source: false }
-        })
+
     ];
 
     if (options.isDev) {
         plugins.push(new ReactRefreshWebpackPlugin());
         plugins.push(new webpack.HotModuleReplacementPlugin());
+        plugins.push(new BundleAnalyzerPlugin({
+            analyzerMode: 'server',
+            generateStatsFile: true,
+            statsOptions: { source: false }
+        }));
     }
 
     return plugins;
