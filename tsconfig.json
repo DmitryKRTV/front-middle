@@ -12,7 +12,11 @@
       "@/*": ["./src/*"]                  // Если ставишь alias сюда его нужно указывать
     },
     "esModuleInterop": true,              // использоваться import и export
-    "allowSyntheticDefaultImports": true  //позволяет использовать дефолтные импорты
+    "allowSyntheticDefaultImports": true,  //позволяет использовать дефолтные импорты
+    "sourceMap": true,
+    "strict": true,
+    "isolatedModules": true,
+    "resolveJsonModule": true
   },
   "ts-node": {
     "compilerOptions": {
