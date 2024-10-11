@@ -1,14 +1,16 @@
 import { classNames } from '@/shared/lib/classNames';
-import { Button, ThemeButton } from '@/shared/ui/Button';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { useTranslation } from "react-i18next";
 import cls from './LangSwitcher.module.scss';
 
 
 interface LangSwitcherProps {
     className?: string;
+    short?: boolean;
 }
 
-export const LangSwitcher = ({className}: LangSwitcherProps) => {
+export const LangSwitcher = (props: LangSwitcherProps) => {
+    const { className, short = false } = props;
     const { t, i18n } = useTranslation();
 
     const toggle = async () => {
@@ -18,10 +20,10 @@ export const LangSwitcher = ({className}: LangSwitcherProps) => {
     return (
         <Button
             className={classNames(cls.LangSwitcher, {}, [className])}
-            theme={ThemeButton.CLEAR}
+            theme={ButtonTheme.CLEAR}
             onClick={toggle}
         >
-            {t('Язык')}
+            {t(short ? 'Короткий язык' : 'Язык')}
         </Button>
     );
 };
