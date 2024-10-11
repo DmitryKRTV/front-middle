@@ -42,6 +42,7 @@
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.5.0",
     "@testing-library/react": "^16.0.1",
+    "@testing-library/user-event": "^14.5.2",
     "@types/jest": "^29.5.13",
     "@types/node": "^20.8.4",
     "@types/react": "^18.2.27",
@@ -89,12 +90,14 @@
     "webpack-dev-server": "^4.7.4"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.2.8",
     "i18next": "^23.15.2",
     "i18next-browser-languagedetector": "^8.0.0",
     "i18next-http-backend": "^2.6.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-i18next": "^15.0.2"
+    "react-i18next": "^15.0.2",
+    "react-redux": "^9.1.2"
   },
   "eslintConfig": {
     "extends": [

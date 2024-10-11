@@ -26,7 +26,7 @@ export const Button = (props: ButtonProps) => {
     const {
         className,
         children,
-        theme = ButtonTheme.CLEAR,
+        theme = ButtonTheme.OUTLINE,
         square = false,
         size = ButtonSize.M,
         ...otherProps
