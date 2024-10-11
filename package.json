@@ -57,7 +57,7 @@
     "eslint": "^9.12.0",
     "eslint-plugin-i18next": "^6.1.0",
     "eslint-plugin-react": "^7.37.1",
-    "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-react-hooks": "^5.1.0-rc-70fb1363-20241010",
     "eslint-plugin-storybook": "^0.9.0",
     "eslint-plugin-unused-imports": "^4.1.4",
     "file-loader": "^6.2.0",
