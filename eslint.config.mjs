@@ -1,9 +1,12 @@
+import { fixupPluginRules } from "@eslint/compat";
 import pluginJs from "@eslint/js";
 import i18next from "eslint-plugin-i18next";
 import pluginReact from "eslint-plugin-react";
+import reactHooks from "eslint-plugin-react-hooks";
 import unusedImports from "eslint-plugin-unused-imports";
 import globals from "globals";
 import tseslint from "typescript-eslint";
+
 
 const customGlobals = {
     __IS_DEV__: true,
@@ -25,6 +28,7 @@ export default [
     {
         plugins: {
             "unused-imports": unusedImports,
+            "react-hooks": fixupPluginRules(reactHooks),
         },
         rules: {
             "semi": [2, "always"],
@@ -57,12 +61,16 @@ export default [
                 markupOnly: true,
                 ignoreAttribute: ['data-testid', 'to'],
             }],
+            ...reactHooks.configs.recommended.rules,
+            // "react-hooks/rules-of-hooks": "error",
+            // "react-hooks/exhaustive-deps": "warn",
         },
     },
     {
-        files: ['**/src/**/*.test.{ts,tsx}'],
+        files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
         rules: {
             'i18next/no-literal-string': 'off',
+            'max-len': 'off',
         },
     },
 ];
