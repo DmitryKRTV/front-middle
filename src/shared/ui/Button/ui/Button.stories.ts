@@ -2,7 +2,7 @@ import { Theme } from '@/app/providers/theme';
 import { ThemeDecorator } from '@/shared/config/storybook/Decorators/ThemeDecorator';
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
-import { Button, ThemeButton } from './Button';
+import { Button, ButtonTheme } from './Button';
 
 const meta = {
     title: 'shared/Button',
@@ -32,7 +32,7 @@ export const Primary: Story = {
 export const Clear: Story = {
     args: {
         children: "Clear",
-        theme: ThemeButton.CLEAR
+        theme: ButtonTheme.CLEAR
     },
     decorators: [ThemeDecorator(Theme.LIGHT)]
 };
@@ -40,7 +40,7 @@ export const Clear: Story = {
 export const ClearDark: Story = {
     args: {
         children: "Clear",
-        theme: ThemeButton.CLEAR
+        theme: ButtonTheme.CLEAR
     },
     decorators: [ThemeDecorator(Theme.DARK)]
 };
@@ -48,6 +48,6 @@ export const ClearDark: Story = {
 export const Outlined: Story = {
     args: {
         children: "OUTLINE",
-        theme: ThemeButton.OUTLINE
+        theme: ButtonTheme.OUTLINE
     },
 };
