@@ -1,14 +1,19 @@
+import { userActions } from '@/entities/User';
 import { classNames } from '@/shared/lib/classNames';
 import { PageLoader } from '@/shared/ui/PageLoader';
-import { Version } from '@/shared/ui/Version/Version';
+import { Version } from '@/shared/ui/Version';
 import { Navbar } from '@/widgets/Navbar';
 import { Sidebar } from '@/widgets/Sidebar';
-import { Suspense } from 'react';
+import { Suspense, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { AppRouter } from './providers/router/ui/AppRouter';
-import { useTheme } from './providers/theme';
 
 export const App = () => {
-    const {theme} = useTheme();
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(userActions.initAuthData());
+    }, [dispatch]);
 
     return (
         <div className={classNames(`app`, {},[])}>
