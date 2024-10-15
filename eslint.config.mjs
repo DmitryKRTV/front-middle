@@ -10,6 +10,7 @@ import tseslint from "typescript-eslint";
 
 const customGlobals = {
     __IS_DEV__: true,
+    __API__: true,
 };
 
 export default [

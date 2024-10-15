@@ -3,9 +3,9 @@ import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import webpack from "webpack";
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
-import { BuildOption } from "./types/config";
+import { BuildOptions } from "./types/config";
 
-export function buildPlugins(options: BuildOption): webpack.WebpackPluginInstance[] {
+export function buildPlugins(options: BuildOptions): webpack.WebpackPluginInstance[] {
     const {paths} = options;
     const plugins = [
         new HtmlWebpackPlugin({                     // для создания index.html в билде
@@ -18,6 +18,7 @@ export function buildPlugins(options: BuildOption): webpack.WebpackPluginInstanc
         }),                            // для отделения css от js
         new webpack.DefinePlugin({
             __IS_DEV__: JSON.stringify(options.isDev),
+            __API__: JSON.stringify(options.apiUrl),
         }),
 
     ];

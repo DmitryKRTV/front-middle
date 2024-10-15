@@ -4,11 +4,11 @@ import { createBabelLoader } from './loaders/createBabelLoader';
 import { createdCssLoader } from './loaders/createCssLoader';
 import { createFileLoader } from './loaders/createFileLoader';
 import { createSVGLoader } from './loaders/createSVGLoader';
-import { BuildOption } from "./types/config";
+import { BuildOptions } from "./types/config";
 
 // loader - сущности обрабатывающие файлы, которые не являются js файлами
 // порядок loader'ов важен!
-export function buildLoaders(options: BuildOption):webpack.RuleSetRule[] {
+export function buildLoaders(options: BuildOptions):webpack.RuleSetRule[] {
     const {isDev} = options;
 
     const fileLoader = createFileLoader();
