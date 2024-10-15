@@ -1,6 +1,7 @@
 export enum Routes {
     MAIN = '',
     ABOUT = 'about',
+    PROFILE = 'profile',
     NOTFOUND = '*'
 }
 

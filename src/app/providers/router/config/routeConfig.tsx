@@ -1,8 +1,9 @@
-import { RouteProps } from 'react-router-dom';
-import { MainPage } from '@/pages/MainPage';
 import { AboutPage } from '@/pages/AboutPage';
+import { MainPage } from '@/pages/MainPage';
 import { NotFoundPage } from '@/pages/NotFoundPage';
+import { ProfilePage } from '@/pages/ProfilePage';
 import { getRoute, Routes } from '@/shared/config/routeConfig/routerConfig';
+import { RouteProps } from 'react-router-dom';
 
 export type AppRoutesProps = RouteProps & {
     // authOnly?: boolean;
@@ -17,6 +18,10 @@ export const RouteConfig: Record<Routes, AppRoutesProps> = {
     [Routes.ABOUT]: {
         path: getRoute(Routes.ABOUT),
         element: <AboutPage />,
+    },
+    [Routes.PROFILE]: {
+        path: getRoute(Routes.PROFILE),
+        element: <ProfilePage />,
     },
     [Routes.NOTFOUND]: {
         path: getRoute(Routes.NOTFOUND),

@@ -16,21 +16,21 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
-    args: {},
+    args: {onSuccess: ()=>{}},
     decorators: [StoreDecorator({
         loginForm: { username: '123', password: 'asd' },
     })]
 };
 
 export const WithError: Story = {
-    args: {},
+    args: {onSuccess: ()=>{}},
     decorators: [StoreDecorator({
         loginForm: { username: '123', password: 'asd', error: 'ERROR' }
     })]
 };
 
 export const Loading: Story = {
-    args: {},
+    args: {onSuccess: ()=>{}},
     decorators: [StoreDecorator({
         loginForm: { isLoading: true }
     })]
