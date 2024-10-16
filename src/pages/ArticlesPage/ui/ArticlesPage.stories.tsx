@@ -1,35 +1,26 @@
 import { Theme } from '@/app/providers/theme';
-import { RoutePath } from '@/shared/config/routeConfig/routerConfig';
 import { ThemeDecorator } from '@/shared/config/storybook/Decorators/ThemeDecorator';
 import type { Meta, StoryObj } from '@storybook/react';
-import { fn } from '@storybook/test';
-import { AppLink } from './AppLink';
+import ArticlesPage from './ArticlesPage';
 
 const meta = {
-    title: 'shared/AppLink',
-    component: AppLink,
+    title: 'pages/ArticlesPage',
+    component: ArticlesPage,
     parameters: {
         layout: '',
     },
     argTypes: {},
-    args: { onClick: fn() },
-} satisfies Meta<typeof AppLink>;
+    args: {},
+} satisfies Meta<typeof ArticlesPage>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
-    args: {
-        to: RoutePath.main,
-        children: "Main"
-    },
-  
+    args: {},
 };
 
 export const SecondaryDark: Story = {
-    args: {
-        to: RoutePath.about,
-        children: "About"
-    },
+    args: {},
     decorators: [ThemeDecorator(Theme.DARK)]
 };

@@ -1,8 +1,10 @@
 import { AboutPage } from '@/pages/AboutPage';
+import ArticleDetailsPage from '@/pages/ArticleDetailsPage/ui/ArticleDetailsPage';
+import ArticlesPage from '@/pages/ArticlesPage/ui/ArticlesPage';
 import { MainPage } from '@/pages/MainPage';
 import { NotFoundPage } from '@/pages/NotFoundPage';
 import { ProfilePage } from '@/pages/ProfilePage';
-import { getRoute, Routes } from '@/shared/config/routeConfig/routerConfig';
+import { AppRoutes, RoutePath } from '@/shared/config/routeConfig/routerConfig';
 import { RouteProps } from 'react-router-dom';
 
 export type AppRoutesProps = RouteProps & {
@@ -10,22 +12,32 @@ export type AppRoutesProps = RouteProps & {
     // roles?: UserRole[];
 };
 
-export const RouteConfig: Record<Routes, AppRoutesProps> = {
-    [Routes.MAIN]: {
-        path: getRoute(Routes.MAIN),
+export const RouteConfig: Record<AppRoutes, AppRoutesProps> = {
+    [AppRoutes.MAIN]: {
+        path: RoutePath.main,
         element: <MainPage />,
     },
-    [Routes.ABOUT]: {
-        path: getRoute(Routes.ABOUT),
+    [AppRoutes.ABOUT]: {
+        path: RoutePath.about,
         element: <AboutPage />,
     },
-    [Routes.PROFILE]: {
-        path: getRoute(Routes.PROFILE),
+    [AppRoutes.PROFILE]: {
+        path: RoutePath.profile,
         element: <ProfilePage />,
         authOnly: true,
     },
-    [Routes.NOTFOUND]: {
-        path: getRoute(Routes.NOTFOUND),
+    [AppRoutes.ARTICLES]: {
+        path: RoutePath.articles,
+        element: <ArticlesPage />,
+        authOnly: true,
+    },
+    [AppRoutes.ARTICLE_DETAILS]: {
+        path: `${RoutePath.article_details}:id`,
+        element: <ArticleDetailsPage />,
+        authOnly: true,
+    },
+    [AppRoutes.NOT_FOUND]: {
+        path: RoutePath.not_found,
         element: <NotFoundPage />,
     },
 };
