@@ -1,27 +1,31 @@
 import { userActions } from '@/entities/User';
+import { getUserInited } from '@/entities/User/model/selectors/getUserInited/getUserInited';
 import { classNames } from '@/shared/lib/classNames';
 import { PageLoader } from '@/shared/ui/PageLoader';
 import { Version } from '@/shared/ui/Version';
 import { Navbar } from '@/widgets/Navbar';
 import { Sidebar } from '@/widgets/Sidebar';
 import { Suspense, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { AppRouter } from './providers/router/ui/AppRouter';
+import { useTheme } from './providers/theme';
 
 export const App = () => {
+    const { theme } = useTheme();
     const dispatch = useDispatch();
+    const inited = useSelector(getUserInited);
 
     useEffect(() => {
         dispatch(userActions.initAuthData());
     }, [dispatch]);
 
     return (
-        <div className={classNames(`app`, {},[])}>
+        <div className={classNames(`app`, {}, [theme])}>
             <Suspense fallback={<PageLoader/>}>
                 <Navbar/>
                 <div className="content-page">
                     <Sidebar />
-                    <AppRouter />
+                    {inited && <AppRouter />}
                 </div>
                 <Version/>
             </Suspense>
