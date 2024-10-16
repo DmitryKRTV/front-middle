@@ -28,7 +28,7 @@ export const createBabelLoader = ({ isDev, isTsx }: BuildBabelLoaderProps) => ({
                         props: ["data-testid"],
                     },
                 ],
-                isDev && require.resolve("react-refresh/babel"),
+                isDev && require.resolve("react-refresh/babel"), // Для корректной работы hot reload
             ].filter(Boolean),
         },
     },
