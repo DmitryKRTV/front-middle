@@ -1,35 +1,26 @@
 import { Theme } from '@/app/providers/theme';
-import { StoreDecorator } from '@/shared/config/storybook/Decorators/StoreDecorator';
 import { ThemeDecorator } from '@/shared/config/storybook/Decorators/ThemeDecorator';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Sidebar } from './Sidebar';
+import { CommentList } from './CommentList';
 
 const meta = {
-    title: 'widgets/Sidebar',
-    component: Sidebar,
+    title: 'entities/CommentList',
+    component: CommentList,
     parameters: {
         layout: '',
     },
-    tags: ['autodocs'],
     argTypes: {},
     args: {},
-} satisfies Meta<typeof Sidebar>;
+} satisfies Meta<typeof CommentList>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
     args: {},
-    decorators: [
-        StoreDecorator({
-            user: { authData: {} },
-        }),
-    ]
 };
 
 export const SecondaryDark: Story = {
     args: {},
-    decorators: [ThemeDecorator(Theme.DARK), StoreDecorator({
-        user: { authData: {} },
-    }),]
+    decorators: [ThemeDecorator(Theme.DARK)]
 };
