@@ -84,14 +84,6 @@ vsCode settings.json:
     ],
     "i18n-ally.keystyle": "nested",
     "folderTemplates.fileTemplates": {
-      "FTName Interpolation": ["<FTName | uppercase>"],
-      "Custom Variable Interpolation": [
-        "names <FTName> inside <testVar> string",
-        "<testVar2 | lowercase>",
-        "",
-        "fillerText1",
-        "fillerText2"
-      ],
       "TypeScript React Component": [
         "import { useTranslation } from 'react-i18next';",
         "import { classNames } from '@/shared/lib/classNames/classNames';",
