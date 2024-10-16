@@ -1,4 +1,6 @@
 import { Theme } from '@/app/providers/theme';
+import { Country } from '@/entities/Country';
+import { Currency } from '@/entities/Currency';
 import { StoreDecorator } from '@/shared/config/storybook/Decorators/StoreDecorator';
 import { ThemeDecorator } from '@/shared/config/storybook/Decorators/ThemeDecorator';
 import type { Meta, StoryObj } from '@storybook/react';
@@ -19,10 +21,34 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
     args: {},
-    decorators: [StoreDecorator({})]
+    decorators: [StoreDecorator({
+        profile: {
+            form: {
+                username: 'admin',
+                age: 22,
+                country: Country.Ukraine,
+                lastname: 'ulbi tv',
+                first: 'asd',
+                city: 'asf',
+                currency: Currency.USD,
+            },
+        },
+    })]
 };
 
 export const SecondaryDark: Story = {
     args: {},
-    decorators: [ThemeDecorator(Theme.DARK), StoreDecorator({})]
+    decorators: [ThemeDecorator(Theme.DARK), StoreDecorator({
+        profile: {
+            form: {
+                username: 'admin',
+                age: 22,
+                country: Country.Ukraine,
+                lastname: 'ulbi tv',
+                first: 'asd',
+                city: 'asf',
+                currency: Currency.USD,
+            },
+        },
+    })]
 };

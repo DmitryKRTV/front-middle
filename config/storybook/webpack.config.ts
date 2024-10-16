@@ -41,7 +41,6 @@ export default ({ config }) => {
             __IS_DEV__: JSON.stringify(true),
             __API__: JSON.stringify('http://localhost:8500'),
             __PROJECT__: JSON.stringify('storybook'),
-            // __API__: JSON.stringify(''),
         }),
     );
 

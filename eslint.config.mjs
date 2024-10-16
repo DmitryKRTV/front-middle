@@ -11,6 +11,7 @@ import tseslint from "typescript-eslint";
 const customGlobals = {
     __IS_DEV__: true,
     __API__: true,
+    __PROJECT__: true,
 };
 
 export default [
@@ -63,6 +64,7 @@ export default [
                 ignoreAttribute: ['data-testid', 'to'],
             }],
             ...reactHooks.configs.recommended.rules,
+            "@typescript-eslint/no-explicit-any": 'warn'
             // "react-hooks/rules-of-hooks": "error",
             // "react-hooks/exhaustive-deps": "warn",
         },

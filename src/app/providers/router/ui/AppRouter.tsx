@@ -1,9 +1,17 @@
+import { getUserAuthData } from "@/entities/User";
 import { PageLoader } from "@/shared/ui/PageLoader";
-import { memo, Suspense, useCallback } from "react";
+import { memo, Suspense, useCallback, useMemo } from "react";
+import { useSelector } from "react-redux";
 import { Route, Routes } from "react-router-dom";
 import { AppRoutesProps, RouteConfig } from "../config/routeConfig";
 
 export const AppRouter = memo(() => {
+    
+    const isAuth = useSelector(getUserAuthData);
+
+    const routes = useMemo(() => Object.values(RouteConfig)
+        .filter((route) => (route.authOnly && !isAuth) ? false : true), [isAuth]);
+
     const renderWithWrapper = useCallback((route: AppRoutesProps) => {
         const el = (
             <Suspense
@@ -16,6 +24,6 @@ export const AppRouter = memo(() => {
         );
         return <Route key={route.path} path={route.path} element={el} />;
     }, []);
-    return <Routes>{Object.values(RouteConfig).map(renderWithWrapper)}</Routes>;
+    return <Routes>{routes.map(renderWithWrapper)}</Routes>;
 });
 
