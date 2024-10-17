@@ -4,6 +4,7 @@ import { ProfileSchema } from "@/entities/Profile";
 import { UserSchema } from "@/entities/User";
 import { AddCommentFormSchema } from "@/features/addCommentForm";
 import { LoginSchema } from "@/features/AuthByUsername/model/types/loginSchema";
+import { UISchema } from "@/features/UI";
 import { ArticleDetailsCommentsSchema } from "@/pages/ArticleDetailsPage/model/types/ArticleDetailsCommentsSchema";
 import { ArticlesPageSchema } from "@/pages/ArticlesPage/model/types/articlesPageSchema";
 import { AnyAction, EnhancedStore, Reducer, ReducersMapObject } from "@reduxjs/toolkit";
@@ -12,6 +13,7 @@ import { AxiosInstance } from "axios";
 export interface StateStaticSchema {
     counter: CounterSchema;
     user: UserSchema;
+    ui: UISchema;
 }
 
 export interface StateSchema extends StateStaticSchema {
