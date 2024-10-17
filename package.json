@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack serve --env port=8300",
     "start:dev": "concurrently \"npm start\"",
-    "build:prod": "webpack --env mode=production --config webpack.config.ts",
+    "build:prod": "webpack  --env mode=production apiUrl=https://json-server-jwn6ae8bi-dmitrykrtvs-projects.vercel.app",
     "build:dev": "webpack --env mode=development --config webpack.config.ts",
     "lint:ts": " eslint \"**/*.{ts,tsx}\"",
     "lint:ts:fix": " eslint \"**/*.{ts,tsx}\" --fix",
@@ -58,6 +58,7 @@
     "babel-jest": "^29.7.0",
     "babel-loader": "^9.2.1",
     "babel-plugin-i18next-extract": "^0.10.0",
+    "copy-webpack-plugin": "^12.0.2",
     "css-loader": "^6.8.1",
     "eslint": "^9.12.0",
     "eslint-plugin-i18next": "^6.1.0",
