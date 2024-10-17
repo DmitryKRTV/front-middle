@@ -12,7 +12,7 @@ export const AppRouter = memo(() => {
                     <PageLoader/>
                 }
             >
-                <div className="page-wrapper">{route.element}</div>
+                {route.element}
             </Suspense>
         );
         return <Route

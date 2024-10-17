@@ -1,4 +1,5 @@
-import {ReactNode} from 'react';
+import { Page } from '@/shared/ui/Page/Page';
+import { ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 
 interface AboutPageProps {
@@ -10,10 +11,10 @@ export const AboutPage = (props: AboutPageProps) => {
     const {children} = props;
 
     return (
-        <div>
+        <Page>
             {t('О сайте')}
             {children}
-        </div>
+        </Page>
     );
 };
 
