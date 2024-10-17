@@ -3,9 +3,7 @@ import { getArticleDetailsData } from '@/entities/Article/model/selectors/articl
 import { Comment } from '@/entities/Comment';
 import { getUserAuthData } from '@/entities/User';
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import {
-    fetchCommentsByArticleId,
-} from '../../services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+import { fetchCommentsByArticleId } from '../fetchCommentsByArticleId/fetchCommentsByArticleId';
 
 export const addCommentForArticle = createAsyncThunk<
     Comment,
