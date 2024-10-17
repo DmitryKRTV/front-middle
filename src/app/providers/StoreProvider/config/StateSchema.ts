@@ -8,7 +8,6 @@ import { ArticleDetailsCommentsSchema } from "@/pages/ArticleDetailsPage/model/t
 import { ArticlesPageSchema } from "@/pages/ArticlesPage/model/types/articlesPageSchema";
 import { AnyAction, EnhancedStore, Reducer, ReducersMapObject } from "@reduxjs/toolkit";
 import { AxiosInstance } from "axios";
-import { NavigateOptions, To } from "react-router";
 
 export interface StateStaticSchema {
     counter: CounterSchema;
@@ -43,7 +42,6 @@ export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {
 
 export interface ThunkExtraArg {
     api: AxiosInstance;
-    navigate?: (to: To, options?: NavigateOptions) => void,
 }
 
 export interface ThunkConfig<T> {
