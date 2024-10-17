@@ -1,6 +1,6 @@
 import { AboutPage } from '@/pages/AboutPage';
 import ArticleDetailsPage from '@/pages/ArticleDetailsPage/ui/ArticleDetailsPage';
-import ArticlesPage from '@/pages/ArticlesPage/ui/ArticlesPage';
+import ArticlesPage from '@/pages/ArticlesPage/ui/ArticlesPage/ArticlesPage';
 import { MainPage } from '@/pages/MainPage';
 import { NotFoundPage } from '@/pages/NotFoundPage';
 import { ProfilePage } from '@/pages/ProfilePage';
