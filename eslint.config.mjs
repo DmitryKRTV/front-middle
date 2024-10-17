@@ -61,7 +61,7 @@ export default [
             ],
             'i18next/no-literal-string': ['warn', {
                 markupOnly: true,
-                ignoreAttribute: ['data-testid', 'to'],
+                ignoreAttribute: ['data-testid', 'to', 'target'],
             }],
             ...reactHooks.configs.recommended.rules,
             "@typescript-eslint/no-explicit-any": 'warn'

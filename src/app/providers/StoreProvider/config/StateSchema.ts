@@ -5,6 +5,7 @@ import { UserSchema } from "@/entities/User";
 import { AddCommentFormSchema } from "@/features/addCommentForm";
 import { LoginSchema } from "@/features/AuthByUsername/model/types/loginSchema";
 import { UISchema } from "@/features/UI";
+import { ArticleDetailsPageSchema } from "@/pages/ArticleDetailsPage/model/types";
 import { ArticleDetailsCommentsSchema } from "@/pages/ArticleDetailsPage/model/types/ArticleDetailsCommentsSchema";
 import { ArticlesPageSchema } from "@/pages/ArticlesPage/model/types/articlesPageSchema";
 import { AnyAction, EnhancedStore, Reducer, ReducersMapObject } from "@reduxjs/toolkit";
@@ -24,6 +25,7 @@ export interface StateSchema extends StateStaticSchema {
     articleDetailsComments?: ArticleDetailsCommentsSchema;
     addCommentForm?: AddCommentFormSchema;
     articlesPage?: ArticlesPageSchema;
+    articleDetailsPage?: ArticleDetailsPageSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;
