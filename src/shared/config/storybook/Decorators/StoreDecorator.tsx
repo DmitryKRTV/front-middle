@@ -1,7 +1,9 @@
 import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider';
 import { articleDetailsReducer } from '@/entities/Article/model/slice/articleDetailsSlice';
 import { profileReducer } from '@/entities/Profile';
+import { addCommentFormReducer } from '@/features/addCommentForm/model/slices/addCommentFormSlice';
 import { loginReducer } from '@/features/AuthByUsername/model/slice/loginSlice';
+import { articleDetailsCommentsReducer } from '@/pages/ArticleDetailsPage/model/slices/articleDetailsCommentsSlice';
 import { ReducersList } from '@/widgets/DynamicModuleLoader';
 import { StoryFn } from '@storybook/react/*';
 
@@ -9,6 +11,8 @@ const defaultAsyncReducers: ReducersList = {
     loginForm: loginReducer,
     profile: profileReducer,
     articleDetails: articleDetailsReducer,
+    addCommentForm: addCommentFormReducer,
+    articleDetailsComments: articleDetailsCommentsReducer,
 };
 
 export const StoreDecorator =

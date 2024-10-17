@@ -13,12 +13,14 @@ import { getProfileIsLoading } from '@/entities/Profile/model/selectors/getProfi
 import { fetchProfileData } from '@/entities/Profile/model/services/fetchProfileData/fetchProfileData';
 import { ProfileCard } from '@/entities/Profile/ui/ProfileCard/ProfileCard';
 import { useAppDispatch } from '@/features/Store/hooks/useAppDispatch';
+import { useInitialEffect } from '@/shared/hooks/useInitialEffect/useInitialEffect';
 import { classNames } from '@/shared/lib/classNames';
 import { Text, TextTheme } from '@/shared/ui/Text/Text';
 import { DynamicModuleLoader, ReducersList } from '@/widgets/DynamicModuleLoader';
-import { useCallback, useEffect } from 'react';
+import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
 
@@ -31,13 +33,15 @@ interface ProfilePageProps {
 }
 
 const ProfilePage = ({ className }: ProfilePageProps) => {
-    const { t } = useTranslation();
+    const { t } = useTranslation('profile');
     const dispatch = useAppDispatch();
     const formData = useSelector(getProfileForm);
     const isLoading = useSelector(getProfileIsLoading);
     const error = useSelector(getProfileError);
     const readonly = useSelector(getProfileReadonly);
     const validateErrors = useSelector(getProfileValidateErrors);
+    const { id } = useParams<{ id: string }>();
+
     const validateErrorTranslates = {
         [ValidateProfileError.SERVER_ERROR]: t('Серверная ошибка при сохранении'),
         [ValidateProfileError.INCORRECT_COUNTRY]: t('Некорректный регион'),
@@ -46,11 +50,11 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
         [ValidateProfileError.INCORRECT_AGE]: t('Некорректный возраст'),
     };
 
-    useEffect(() => {
-        if (__PROJECT__ !== 'storybook') {
-            dispatch(fetchProfileData());
+    useInitialEffect(() => {
+        if (id) {
+            dispatch(fetchProfileData(id));
         }
-    }, [dispatch]);
+    });
 
     const onChangeFirstname = useCallback((value?: string) => {
         dispatch(profileActions.updateProfile({ first: value || '' }));
@@ -99,7 +103,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
                     data={formData}
                     isLoading={isLoading}
                     error={error}
-                    readonly={!!readonly}
+                    readonly={readonly}
                     onChangeFirstname={onChangeFirstname}
                     onChangeLastname={onChangeLastname}
                     onChangeAge={onChangeAge}
@@ -115,4 +119,3 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
 };
 
 export default ProfilePage;
-
