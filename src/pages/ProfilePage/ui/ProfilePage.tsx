@@ -13,8 +13,8 @@ import { getProfileIsLoading } from '@/entities/Profile/model/selectors/getProfi
 import { fetchProfileData } from '@/entities/Profile/model/services/fetchProfileData/fetchProfileData';
 import { ProfileCard } from '@/entities/Profile/ui/ProfileCard/ProfileCard';
 import { useAppDispatch } from '@/features/Store/hooks/useAppDispatch';
-import { useInitialEffect } from '@/shared/hooks/useInitialEffect/useInitialEffect';
 import { classNames } from '@/shared/lib/classNames';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Text, TextTheme } from '@/shared/ui/Text/Text';
 import { DynamicModuleLoader, ReducersList } from '@/widgets/DynamicModuleLoader';
 import { useCallback } from 'react';

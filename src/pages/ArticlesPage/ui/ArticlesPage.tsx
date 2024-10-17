@@ -1,3 +1,5 @@
+import { ArticleView } from '@/entities/Article/model/types/article';
+import { ArticleList } from '@/entities/Article/ui/ArticleList/ArticleList';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -12,7 +14,13 @@ const ArticlesPage = (props: ArticlesPageProps) => {
     const { t } = useTranslation();
 
     return (
-        <div className={classNames(cls.ArticlesPage, {}, [className])} />
+        <div className={classNames(cls.ArticlesPage, {}, [className])}>
+            <ArticleList
+                isLoading
+                view={ArticleView.BIG}
+                articles={[]}
+            />
+        </div>
     );
 };
 
