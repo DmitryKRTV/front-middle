@@ -1,4 +1,5 @@
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
+import CircularDependencyPlugin from 'circular-dependency-plugin';
 import CopyPlugin from 'copy-webpack-plugin';
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
@@ -17,8 +18,8 @@ export function buildPlugins(options: BuildOptions): webpack.WebpackPluginInstan
             filename: 'css/[name].[contenthash:8].css',       // путь куда ложить
             chunkFilename: 'css/[name].[contenthash:8].css'   // для работы асинхронного кода
         }),                            // для отделения css от js
-        new webpack.DefinePlugin({
-            __IS_DEV__: JSON.stringify(options.isDev),
+        new webpack.DefinePlugin({  
+            __IS_DEV__: JSON.stringify(options.isDev),            // Определяет глобальные переменные для проекта
             __API__: JSON.stringify(options.apiUrl),
             __PROJECT__: JSON.stringify(options.project),
         }),
@@ -26,6 +27,10 @@ export function buildPlugins(options: BuildOptions): webpack.WebpackPluginInstan
             patterns: [
                 { from: paths.locales, to: paths.buildLocales },
             ],
+        }),
+        new CircularDependencyPlugin({                     // следит за циклическими зависимостями
+            exclude: /node_modules/,
+            failOnError: true,
         }),
     ];
 
