@@ -1,4 +1,4 @@
-import { Avatar } from '@/shared/ui/Avatar/Avatar';
+import { Avatar } from '../Avatar/Avatar';
 import AvatarImg from './storybook.jpg';
 
 import { Theme } from '@/app/providers/theme';

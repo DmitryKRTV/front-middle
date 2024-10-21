@@ -2,6 +2,7 @@ import { useAppDispatch } from '@/features/Store/hooks/useAppDispatch';
 import { classNames } from '@/shared/lib/classNames';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { Input } from '@/shared/ui/Input';
+import { HStack } from '@/shared/ui/Stack';
 import { DynamicModuleLoader, ReducersList } from '@/widgets/DynamicModuleLoader';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -18,7 +19,6 @@ export interface AddCommentFormProps {
 const reducers: ReducersList = {
     addCommentForm: addCommentFormReducer,
 };
-
 const AddCommentForm = memo((props: AddCommentFormProps) => {
     const { className, onSendComment } = props;
     const { t } = useTranslation();
@@ -37,7 +37,7 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers}>
-            <div className={classNames(cls.AddCommentForm, {}, [className])}>
+            <HStack justify="between" max className={classNames(cls.AddCommentForm, {}, [className])}>
                 <Input
                     className={cls.input}
                     placeholder={t('Введите текст комментария')}
@@ -50,7 +50,7 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
                 >
                     {t('Отправить')}
                 </Button>
-            </div>
+            </HStack>
         </DynamicModuleLoader>
     );
 });
