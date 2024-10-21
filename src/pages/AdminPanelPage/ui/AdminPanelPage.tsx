@@ -1,0 +1,14 @@
+import { Page } from '@/widgets/Page/Page';
+import { useTranslation } from 'react-i18next';
+
+const AdminPanelPage = () => {
+    const { t } = useTranslation('about');
+
+    return (
+        <Page>
+            {t('Админ панель')}
+        </Page>
+    );
+};
+
+export default AdminPanelPage;

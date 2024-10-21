@@ -1,7 +1,7 @@
 import { PageLoader } from "@/shared/ui/PageLoader";
 import { memo, Suspense, useCallback } from "react";
 import { Route, Routes } from "react-router-dom";
-import { AppRoutesProps, RouteConfig } from "../config/routeConfig";
+import { AppRoutesProps, routeConfig } from "../config/routeConfig";
 import { RequireAuth } from "./RequireAuth";
 
 export const AppRouter = memo(() => {
@@ -21,6 +21,6 @@ export const AppRouter = memo(() => {
             element={route.authOnly ? <RequireAuth>{el}</RequireAuth> : el}
         />;
     }, []);
-    return <Routes>{Object.values(RouteConfig).map(renderWithWrapper)}</Routes>;
+    return <Routes>{Object.values(routeConfig).map(renderWithWrapper)}</Routes>;
 });
 
