@@ -1,4 +1,4 @@
-import { ArticleSortField, ArticleType, ArticleView } from '@/entities/Article/model/types/article';
+import { ArticleSortField, ArticleType, ArticleView } from '@/entities/Article';
 import { ArticleSortSelector } from '@/entities/Article/ui/ArticleSortSelector/ArticleSortSelector';
 import { ArticleTypeTabs } from '@/entities/Article/ui/ArticleTypeTabs/ArticleTypeTabs';
 import { ArticleViewSelector } from '@/entities/Article/ui/ArticleViewSelector/ArticleViewSelector';

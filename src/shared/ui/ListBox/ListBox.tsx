@@ -11,7 +11,6 @@ export interface ListBoxItem {
     content: ReactNode;
     disabled?: boolean;
 }
-
 interface ListBoxProps {
     items?: ListBoxItem[];
     className?: string;
@@ -29,7 +28,6 @@ const mapDirectionClass: Record<DropdownDirection, string> = {
     'top right': cls.optionsTopRight,
     'top left': cls.optionsTopLeft,
 };
-
 
 export function ListBox(props: ListBoxProps) {
     const {

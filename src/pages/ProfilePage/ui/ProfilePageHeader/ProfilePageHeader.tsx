@@ -1,7 +1,10 @@
-import { getProfileData, profileActions } from '@/entities/Profile';
-import { getProfileReadonly } from '@/entities/Profile/model/selectors/getProfileReadonly/getProfileReadonly';
-import { updateProfileData } from '@/entities/Profile/model/services/updateProfileData/updateProfileData';
 import { getUserAuthData } from '@/entities/User';
+import { getProfileData } from '@/features/editableProfileCard/model/selectors/getProfileData/getProfileData';
+import {
+    getProfileReadonly
+} from '@/features/editableProfileCard/model/selectors/getProfileReadonly/getProfileReadonly';
+import { updateProfileData } from '@/features/editableProfileCard/model/services/updateProfileData/updateProfileData';
+import { profileActions } from '@/features/editableProfileCard/model/slice/profileSlice';
 import { useAppDispatch } from '@/features/Store/hooks/useAppDispatch';
 import { classNames } from '@/shared/lib/classNames';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
