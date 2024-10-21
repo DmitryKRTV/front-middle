@@ -1,3 +1,4 @@
+import { StoreDecorator } from '@/shared/config/storybook/Decorators/StoreDecorator';
 import type { Meta, StoryObj } from '@storybook/react';
 import { ArticlesPageFilters } from './ArticlesPageFilters';
 
@@ -16,4 +17,5 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
     args: {},
+    decorators: [StoreDecorator({}),]
 };

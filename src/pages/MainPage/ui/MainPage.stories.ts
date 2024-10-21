@@ -1,4 +1,5 @@
 import { Theme } from '@/app/providers/theme';
+import { StoreDecorator } from '@/shared/config/storybook/Decorators/StoreDecorator';
 import { ThemeDecorator } from '@/shared/config/storybook/Decorators/ThemeDecorator';
 import type { Meta, StoryObj } from '@storybook/react';
 import { MainPage } from './MainPage';
@@ -11,6 +12,7 @@ const meta = {
     },
     argTypes: {},
     args: {},
+    decorators: [StoreDecorator({}),]
 } satisfies Meta<typeof MainPage>;
 
 export default meta;
