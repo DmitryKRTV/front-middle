@@ -8,7 +8,7 @@ import { Icon } from '@/shared/ui/Icon/Icon';
 import { Text } from '@/shared/ui/Text/Text';
 import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import EyeIcon from 'shared/assets/icons/eye-20-20.svg';
+import EyeIcon from '@/shared/assets/icons/eye-20-20.svg';
 import { ArticleBlockType, ArticleView } from '../../model/consts/articleConsts';
 import { Article, ArticleTextBlock } from '../../model/types/article';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
