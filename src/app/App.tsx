@@ -1,5 +1,6 @@
 import { getUserInited, userActions } from '@/entities/User';
 import { classNames } from '@/shared/lib/classNames';
+import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 import { PageLoader } from '@/shared/ui/PageLoader';
 import { Version } from '@/shared/ui/Version';
 import { Navbar } from '@/widgets/Navbar';
@@ -7,7 +8,6 @@ import { Sidebar } from '@/widgets/Sidebar';
 import { Suspense, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppRouter } from './providers/router/ui/AppRouter';
-import { useTheme } from './providers/theme';
 
 export const App = () => {
     const { theme } = useTheme();

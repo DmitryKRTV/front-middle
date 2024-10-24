@@ -3,9 +3,9 @@ import { articleDetailsReducer } from '@/entities/Article/testing';
 import { addCommentFormReducer } from '@/features/addCommentForm/testing';
 import { loginReducer } from '@/features/AuthByUsername/testing';
 import { profileReducer } from '@/features/editableProfileCard/testing';
-import { uiReducer } from '@/features/UI';
+import { uiReducer } from '@/features/UI/testing';
 import { articlesPageReducer } from '@/pages/ArticlesPage/testing';
-import { ReducersList } from '@/widgets/DynamicModuleLoader';
+import { ReducersList } from '@/shared/lib/components/DynamicModuleLoader';
 import { StoryFn } from '@storybook/react/*';
 
 const defaultAsyncReducers: ReducersList = {

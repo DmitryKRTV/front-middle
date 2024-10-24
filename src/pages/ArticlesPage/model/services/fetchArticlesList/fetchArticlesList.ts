@@ -1,4 +1,4 @@
-import { ThunkConfig } from '@/app/providers/StoreProvider/config/StateSchema';
+import { ThunkConfig } from '@/app/providers/StoreProvider';
 import { Article, ArticleType } from '@/entities/Article';
 import { addQueryParams } from '@/shared/lib/addQueryParams/addQueryParams';
 import { createAsyncThunk } from '@reduxjs/toolkit';

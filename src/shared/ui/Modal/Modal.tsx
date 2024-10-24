@@ -1,7 +1,7 @@
-import { useTheme } from '@/app/providers/theme';
 import { classNames } from '@/shared/lib/classNames';
 import { Mods } from '@/shared/lib/classNames/classNames';
 import { useModal } from '@/shared/lib/hooks/useModal/useModal';
+import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 import {
     ReactNode,
 } from 'react';

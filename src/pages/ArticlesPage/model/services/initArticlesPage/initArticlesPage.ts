@@ -1,4 +1,4 @@
-import { ThunkConfig } from '@/app/providers/StoreProvider/config/StateSchema';
+import { ThunkConfig } from '@/app/providers/StoreProvider';
 import { ArticleSortField } from '@/entities/Article';
 import { SortOrder } from '@/shared/types';
 import { createAsyncThunk } from '@reduxjs/toolkit';

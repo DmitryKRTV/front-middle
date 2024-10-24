@@ -69,7 +69,7 @@
     "css-loader": "^6.8.1",
     "eslint": "^9.12.0",
     "eslint-plugin-i18next": "^6.1.0",
-    "eslint-plugin-krtv-plugin": "^0.1.4",
+    "eslint-plugin-krtv-plugin": "^0.1.5",
     "eslint-plugin-react": "^7.37.1",
     "eslint-plugin-react-hooks": "^5.1.0-rc-70fb1363-20241010",
     "eslint-plugin-storybook": "^0.9.0",

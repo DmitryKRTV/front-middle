@@ -72,7 +72,15 @@ export default [
             // "react-hooks/rules-of-hooks": "error",
             // "react-hooks/exhaustive-deps": "warn",
             "krtv-plugin/path-checker":  ["error", { alias: "@" }],
-            "krtv-plugin/public-api-imports":  ["error", { alias: "@", testFilesPatterns: ['**/*.test.ts', '**\\*.test.ts', '**/StoreDecorator.tsx', '**\\StoreDecorator.tsx'] }]
+            "krtv-plugin/public-api-imports":  ["error", { alias: "@", testFilesPatterns: 
+                ['**/*.test.ts', '**\\*.test.ts', '**/StoreDecorator.tsx', '**\\StoreDecorator.tsx'] }],
+            "krtv-plugin/layer-imports": [
+                'error',
+                {
+                    alias: '@',
+                    ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
+                },
+            ],
         },
     },
     {

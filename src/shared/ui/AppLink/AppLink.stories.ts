@@ -1,6 +1,6 @@
-import { Theme } from '@/app/providers/theme';
-import { RoutePath } from '@/shared/config/routeConfig/routerConfig';
 import { ThemeDecorator } from '@/shared/config/storybook/Decorators/ThemeDecorator';
+import { RoutePath } from '@/shared/const/router';
+import { Theme } from '@/shared/const/theme';
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 import { AppLink } from './AppLink';

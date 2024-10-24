@@ -1,5 +1,5 @@
 import { getArticleDetailsData } from '@/entities/Article';
-import { RoutePath } from '@/shared/config/routeConfig/routerConfig';
+import { RoutePath } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { HStack } from '@/shared/ui/Stack';
