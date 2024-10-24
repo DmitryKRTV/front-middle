@@ -4,7 +4,7 @@ import { ArticleRecommendationsList } from '@/features/articleRecommendationsLis
 import { classNames } from '@/shared/lib/classNames';
 import { VStack } from '@/shared/ui/Stack';
 import { DynamicModuleLoader, ReducersList } from '@/widgets/DynamicModuleLoader';
-import { Page } from '@/widgets/Page/Page';
+import { Page } from '@/widgets/Page';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';

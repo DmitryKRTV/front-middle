@@ -1,5 +1,4 @@
-import { userActions } from '@/entities/User';
-import { getUserInited } from '@/entities/User/model/selectors/getUserInited/getUserInited';
+import { getUserInited, userActions } from '@/entities/User';
 import { classNames } from '@/shared/lib/classNames';
 import { PageLoader } from '@/shared/ui/PageLoader';
 import { Version } from '@/shared/ui/Version';

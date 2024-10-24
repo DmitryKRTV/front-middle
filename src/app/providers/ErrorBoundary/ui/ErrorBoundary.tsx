@@ -1,5 +1,5 @@
 import { PageLoader } from '@/shared/ui/PageLoader';
-import { ErrorPage } from '@/widgets/ErrorPage/ui/ErrorPage';
+import { ErrorPage } from '@/widgets/ErrorPage';
 import React, { ErrorInfo, ReactNode, Suspense } from 'react';
 
 interface ErrorBoundaryProps {

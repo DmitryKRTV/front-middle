@@ -8,7 +8,13 @@ const meta = {
     parameters: {
         layout: '',
     },
-    decorators: [StoreDecorator({})],
+    decorators: [
+        StoreDecorator({
+            user: {
+                authData: { id: '1' },
+            },
+        }),
+    ],
     argTypes: {},
     args: {},
 } satisfies Meta<typeof ArticleRating>;
@@ -20,4 +26,35 @@ export const Primary: Story = {
     args: {
         articleId: 'story-a-id-1'
     },
+    parameters: {
+        mockData: [
+            {
+                url: `${__API__}/article-ratings?userId=1&articleId=1`,
+                method: 'GET',
+                status: 200,
+                response: [
+                    {
+                        rate: 4,
+                    },
+                ],
+            },
+        ],
+    }
+};
+
+
+export const WithoutRate: Story = {
+    args: {
+        articleId: 'story-a-id-2'
+    },
+    parameters: {
+        mockData: [
+            {
+                url: `${__API__}/article-ratings?userId=1&articleId=1`,
+                method: 'GET',
+                status: 200,
+                response: [ ],
+            },
+        ],
+    }
 };

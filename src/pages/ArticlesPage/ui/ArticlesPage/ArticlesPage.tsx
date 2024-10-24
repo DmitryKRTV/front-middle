@@ -1,5 +1,5 @@
-import { useAppDispatch } from '@/features/Store/hooks/useAppDispatch';
 import { classNames } from '@/shared/lib/classNames';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { DynamicModuleLoader, ReducersList } from '@/widgets/DynamicModuleLoader';
 import { memo, useCallback } from 'react';

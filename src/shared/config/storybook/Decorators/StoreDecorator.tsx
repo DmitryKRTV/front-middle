@@ -1,11 +1,10 @@
 import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider';
-import { articleDetailsReducer } from '@/entities/Article/model/slice/articleDetailsSlice';
-import { addCommentFormReducer } from '@/features/addCommentForm/model/slices/addCommentFormSlice';
-import { loginReducer } from '@/features/AuthByUsername/model/slice/loginSlice';
-import { profileReducer } from '@/features/editableProfileCard/model/slice/profileSlice';
+import { articleDetailsReducer } from '@/entities/Article/testing';
+import { addCommentFormReducer } from '@/features/addCommentForm/testing';
+import { loginReducer } from '@/features/AuthByUsername/testing';
+import { profileReducer } from '@/features/editableProfileCard/testing';
 import { uiReducer } from '@/features/UI';
-import { articleDetailsCommentsReducer } from '@/pages/ArticleDetailsPage/model/slices/articleDetailsCommentsSlice';
-import { articlesPageReducer } from '@/pages/ArticlesPage/model/slices/articlesPageSlice';
+import { articlesPageReducer } from '@/pages/ArticlesPage/testing';
 import { ReducersList } from '@/widgets/DynamicModuleLoader';
 import { StoryFn } from '@storybook/react/*';
 
@@ -14,7 +13,7 @@ const defaultAsyncReducers: ReducersList = {
     profile: profileReducer,
     articleDetails: articleDetailsReducer,
     addCommentForm: addCommentFormReducer,
-    articleDetailsComments: articleDetailsCommentsReducer,
+    // articleDetailsComments: articleDetailsCommentsReducer,
     articlesPage: articlesPageReducer,
     ui: uiReducer,
 };

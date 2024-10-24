@@ -24,4 +24,30 @@ export const Primary: Story = {
             title: 'title'
         }
     },
+    parameters: {
+        mockData: [
+            {
+                url: `${__API__}/notifications`,
+                method: 'GET',
+                status: 200,
+                response: [
+                    {
+                        id: '1',
+                        title: 'Уведомление',
+                        description: 'Поставь лайк и оставь комментарий под Ulbi TV',
+                    },
+                    {
+                        id: '2',
+                        title: 'Уведомление 2',
+                        description: 'Поставь лайк и оставь комментарий под Ulbi TV',
+                    },
+                    {
+                        id: '3',
+                        title: 'Уведомление 3',
+                        description: 'Поставь лайк и оставь комментарий под Ulbi TV',
+                    },
+                ],
+            },
+        ],
+    }
 };

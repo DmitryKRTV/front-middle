@@ -71,8 +71,8 @@ export default [
             "@typescript-eslint/no-explicit-any": 'warn',
             // "react-hooks/rules-of-hooks": "error",
             // "react-hooks/exhaustive-deps": "warn",
-            "krtv-plugin/path-checker": "error",
-            "krtv-plugin/no-bad-imports": "error"
+            "krtv-plugin/path-checker":  ["error", { alias: "@" }],
+            "krtv-plugin/public-api-imports":  ["error", { alias: "@", testFilesPatterns: ['**/*.test.ts', '**\\*.test.ts', '**/StoreDecorator.tsx', '**\\StoreDecorator.tsx'] }]
         },
     },
     {
