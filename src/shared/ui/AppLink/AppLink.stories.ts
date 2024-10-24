@@ -1,5 +1,5 @@
 import { ThemeDecorator } from '@/shared/config/storybook/Decorators/ThemeDecorator';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteAbout, getRouteMain } from '@/shared/const/router';
 import { Theme } from '@/shared/const/theme';
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
@@ -20,7 +20,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
     args: {
-        to: RoutePath.main,
+        to: getRouteMain(),
         children: "Main"
     },
   
@@ -28,7 +28,7 @@ export const Primary: Story = {
 
 export const SecondaryDark: Story = {
     args: {
-        to: RoutePath.about,
+        to: getRouteAbout(),
         children: "About"
     },
     decorators: [ThemeDecorator(Theme.DARK)]

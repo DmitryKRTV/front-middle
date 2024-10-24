@@ -1,9 +1,10 @@
+import { withThemeByClassName } from '@storybook/addon-themes';
 import type { Preview } from "@storybook/react";
-import { Theme } from '../../src/app/providers/theme';
 import { BrowserRouterDecorator } from '../../src/shared/config/storybook/Decorators/BrowserRouterDecorator';
 import { StyleDecorator } from '../../src/shared/config/storybook/Decorators/StyleDecorator';
 import { SuspenseDecorator } from '../../src/shared/config/storybook/Decorators/SuspenseDecorator';
 import { ThemeDecorator } from '../../src/shared/config/storybook/Decorators/ThemeDecorator';
+import { Theme } from '../../src/shared/const/theme';
 
 const preview: Preview = {
     parameters: {
@@ -18,7 +19,15 @@ const preview: Preview = {
         StyleDecorator,
         ThemeDecorator(Theme.LIGHT),
         BrowserRouterDecorator,
-        SuspenseDecorator
+        SuspenseDecorator,
+        withThemeByClassName({
+            themes: {
+                light: Theme.LIGHT,
+                dark: Theme.DARK,
+                orange: Theme.ORANGE
+            },
+            defaultTheme: 'light',
+        }),
     ],
 };
 
