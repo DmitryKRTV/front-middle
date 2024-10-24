@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ArticleView } from '../../model/consts/articleConsts';
+import { ArticleView } from '../../entities/Article/model/consts/articleConsts';
 import { ArticleViewSelector } from './ArticleViewSelector';
 
 const meta = {
