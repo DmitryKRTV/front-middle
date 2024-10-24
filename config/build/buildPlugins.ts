@@ -9,33 +9,26 @@ import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import { BuildOptions } from "./types/config";
 
 export function buildPlugins(options: BuildOptions): webpack.WebpackPluginInstance[] {
-    const {paths} = options;
+    const {paths, isDev} = options;
+    const isProd = !isDev;
     const plugins = [
-        new HtmlWebpackPlugin({                     // для создания index.html в билде
-            template: paths.html // вебпак возмёт файл как шаблон
+        new HtmlWebpackPlugin({                             // для создания index.html в билде
+            template: paths.html                            // вебпак возмёт файл как шаблон
         }),
-        new webpack.ProgressPlugin(),                         // для отслеживания разрастания билда
-        new MiniCssExtractPlugin({
-            filename: 'css/[name].[contenthash:8].css',       // путь куда ложить
-            chunkFilename: 'css/[name].[contenthash:8].css'   // для работы асинхронного кода
-        }),                            // для отделения css от js
+        new webpack.ProgressPlugin(),                       // для отслеживания разрастания билда
+        // для отделения css от js
         new webpack.DefinePlugin({  
-            __IS_DEV__: JSON.stringify(options.isDev),            // Определяет глобальные переменные для проекта
+            __IS_DEV__: JSON.stringify(options.isDev),      // Определяет глобальные переменные для проекта
             __API__: JSON.stringify(options.apiUrl),
             __PROJECT__: JSON.stringify(options.project),
         }),
-        new CopyPlugin({
-            patterns: [
-                { from: paths.locales, to: paths.buildLocales },
-            ],
-        }),
-        new CircularDependencyPlugin({                     // следит за циклическими зависимостями
+        new CircularDependencyPlugin({                      // следит за циклическими зависимостями
             exclude: /node_modules/,
             failOnError: true,
         }),
-        new ForkTsCheckerWebpackPlugin({                // Убирает проверку типов в отдельный процесс, отделяя этот процесс от сборки
-            typescript: {                               // (увеличивает скорость сборки проекта)
-                diagnosticOptions: {                    // !! Очень полезная штука !!
+        new ForkTsCheckerWebpackPlugin({                    // Убирает проверку типов в отдельный процесс, отделяя этот процесс от сборки
+            typescript: {                                   // (увеличивает скорость сборки проекта)
+                diagnosticOptions: {                        // !! Очень полезная штука !!
                     semantic: true,
                     syntactic: true,
                 },
@@ -53,6 +46,19 @@ export function buildPlugins(options: BuildOptions): webpack.WebpackPluginInstan
             statsOptions: { source: false }
         }));
     }
+
+    if (isProd) {
+        plugins.push(new MiniCssExtractPlugin({               // извлекает css файлы
+            filename: 'css/[name].[contenthash:8].css',       // путь куда ложить
+            chunkFilename: 'css/[name].[contenthash:8].css'   // для работы асинхронного кода
+        }));
+        plugins.push(new CopyPlugin({                         // перемещает перевод из public в build
+            patterns: [
+                { from: paths.locales, to: paths.buildLocales },
+            ],
+        }));
+    }
+    
 
     return plugins;
 }
