@@ -1,6 +1,5 @@
 import { classNames } from '@/shared/lib/classNames';
-import { Button } from '@/shared/ui/Button';
-import { ButtonSize, ButtonTheme } from '@/shared/ui/Button/ui/Button';
+import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/Button';
 import { LangSwitcher } from '@/shared/ui/LangSwitcher';
 import { VStack } from '@/shared/ui/Stack';
 import { ThemeSwitcher } from '@/shared/ui/ThemeSwitcher';

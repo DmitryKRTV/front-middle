@@ -1,5 +1,5 @@
 import { classNames } from '@/shared/lib/classNames';
-import { Text } from '@/shared/ui/Text/Text';
+import { Text } from '@/shared/ui/Text';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ArticleTextBlock } from '../../model/types/article';
