@@ -24,8 +24,8 @@ export function componentRender(component: ReactNode, options: componentRenderOp
             <StoreProvider asyncReducers={asyncReducers} initialState={initialState}>
                 <I18nextProvider i18n={i18nForTests}>
                     {component}
-                </I18nextProvider>,
-            </StoreProvider>,
+                </I18nextProvider>
+            </StoreProvider>
         </MemoryRouter>,
     );
 }

@@ -20,12 +20,7 @@ import {
     getRouteMain,
     getRouteProfile
 } from '@/shared/const/router';
-import { RouteProps } from 'react-router-dom';
-
-export type AppRoutesProps = RouteProps & {
-    authOnly?: boolean;
-    roles?: UserRole[];
-};
+import { AppRoutesProps } from '@/shared/types/router';
 
 export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
     [AppRoutes.MAIN]: {

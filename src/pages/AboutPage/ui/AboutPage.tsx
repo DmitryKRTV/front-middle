@@ -11,7 +11,7 @@ export const AboutPage = (props: AboutPageProps) => {
     const {children} = props;
 
     return (
-        <Page>
+        <Page data-testid="AboutPage">
             {t('О сайте')}
             {children}
         </Page>
