@@ -90,4 +90,7 @@ export default [
             'max-len': 'off',
         },
     },
+    {
+        ignores: ["cypress/*"]
+    }
 ];

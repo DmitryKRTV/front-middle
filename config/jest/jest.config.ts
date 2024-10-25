@@ -29,7 +29,8 @@ const config: Config = {
 
     // An array of regexp pattern strings used to skip coverage collection
     coveragePathIgnorePatterns: [
-        "/node_modules/"
+        "/node_modules/",
+        '\\\\node_modules\\\\',
     ],
 
     // Indicates which provider should be used to instrument code for coverage
@@ -174,6 +175,7 @@ const config: Config = {
     testMatch: [
         '<rootDir>src/**/__tests__/**/*.[jt]s?(x)',
         '<rootDir>src/**/?(*.)+(spec|test).[tj]s?(x)',
+        '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
     ],
     
     // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
