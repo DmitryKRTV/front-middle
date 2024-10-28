@@ -1,5 +1,8 @@
 import { classNames } from '@/shared/lib/classNames';
-import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader';
+import {
+    DynamicModuleLoader,
+    ReducersList,
+} from '@/shared/lib/components/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { Input } from '@/shared/ui/Input';
@@ -7,8 +10,14 @@ import { HStack } from '@/shared/ui/Stack';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { getAddCommentFormError, getAddCommentFormText } from '../../model/selectors/addCommentFormSelectors';
-import { addCommentFormActions, addCommentFormReducer } from '../../model/slices/addCommentFormSlice';
+import {
+    getAddCommentFormError,
+    getAddCommentFormText,
+} from '../../model/selectors/addCommentFormSelectors';
+import {
+    addCommentFormActions,
+    addCommentFormReducer,
+} from '../../model/slices/addCommentFormSlice';
 import cls from './AddCommentForm.module.scss';
 
 export interface AddCommentFormProps {
@@ -26,9 +35,12 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
     const error = useSelector(getAddCommentFormError);
     const dispatch = useAppDispatch();
 
-    const onCommentTextChange = useCallback((value: string) => {
-        dispatch(addCommentFormActions.setText(value));
-    }, [dispatch]);
+    const onCommentTextChange = useCallback(
+        (value: string) => {
+            dispatch(addCommentFormActions.setText(value));
+        },
+        [dispatch],
+    );
 
     const onSendHandler = useCallback(() => {
         onSendComment(text || '');
@@ -37,11 +49,12 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers}>
-            <HStack 
+            <HStack
                 data-testid="AddCommentForm"
-                justify="between" 
-                max 
-                className={classNames(cls.AddCommentForm, {}, [className])}>
+                justify="between"
+                max
+                className={classNames(cls.AddCommentForm, {}, [className])}
+            >
                 <Input
                     className={cls.input}
                     placeholder={t('Введите текст комментария')}

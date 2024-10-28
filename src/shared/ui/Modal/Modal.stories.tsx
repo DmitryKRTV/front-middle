@@ -28,5 +28,5 @@ export const SecondaryDark: Story = {
         isOpen: true,
         children: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit\n ',
     },
-    decorators: [ThemeDecorator(Theme.DARK)]
+    decorators: [ThemeDecorator(Theme.DARK)],
 };

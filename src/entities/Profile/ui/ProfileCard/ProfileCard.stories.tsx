@@ -38,14 +38,12 @@ export const Error: Story = {
     args: {
         error: 'true',
     },
-    decorators: [ThemeDecorator(Theme.DARK)]
+    decorators: [ThemeDecorator(Theme.DARK)],
 };
 
 export const Loading: Story = {
     args: {
         isLoading: true,
     },
-    decorators: [ThemeDecorator(Theme.DARK)]
+    decorators: [ThemeDecorator(Theme.DARK)],
 };
-
-

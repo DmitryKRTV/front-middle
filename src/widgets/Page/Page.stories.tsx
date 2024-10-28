@@ -17,10 +17,10 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
-    args: {children: <div>123</div>},
+    args: { children: <div>123</div> },
 };
 
 export const SecondaryDark: Story = {
-    args: {children: <div>123</div>},
-    decorators: [ThemeDecorator(Theme.DARK)]
+    args: { children: <div>123</div> },
+    decorators: [ThemeDecorator(Theme.DARK)],
 };

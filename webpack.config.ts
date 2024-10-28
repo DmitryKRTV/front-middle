@@ -1,15 +1,15 @@
-import path from "path";
+import path from 'path';
 import webpack from 'webpack';
-import { buildWebpackConfig } from "./config/build/buildWebpackConfig";
-import { BuildEnv, BuildPaths } from "./config/build/types/config";
+import { buildWebpackConfig } from './config/build/buildWebpackConfig';
+import { BuildEnv, BuildPaths } from './config/build/types/config';
 
 // __dirname, 'src', 'index.tsx' - эквивалент "./src/index.tsx"
 //плагины - классы
 // сборка это функция и соответственно в параметры сборки приходят переменные окружения,
 // задаваемые через командную строку при запуске команды
 export default (env: BuildEnv) => {
-    const mode = env?.mode || "development";
-    const isDev = mode === "development";
+    const mode = env?.mode || 'development';
+    const isDev = mode === 'development';
     const PORT = env?.port || 10000;
     const apiUrl = env?.apiUrl || 'http://localhost:8000';
 
@@ -21,7 +21,7 @@ export default (env: BuildEnv) => {
         locales: path.resolve(__dirname, 'public', 'locales'),
         buildLocales: path.resolve(__dirname, 'build', 'locales'),
     };
-    
+
     // module.exports = {
     const config: webpack.Configuration = buildWebpackConfig({
         mode,
@@ -29,7 +29,7 @@ export default (env: BuildEnv) => {
         isDev,
         port: PORT,
         apiUrl,
-        project: 'frontend'
+        project: 'frontend',
     });
     return config;
 };

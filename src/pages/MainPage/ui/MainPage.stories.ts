@@ -12,7 +12,7 @@ const meta = {
     },
     argTypes: {},
     args: {},
-    decorators: [StoreDecorator({}),]
+    decorators: [StoreDecorator({})],
 } satisfies Meta<typeof MainPage>;
 
 export default meta;
@@ -24,5 +24,5 @@ export const Primary: Story = {
 
 export const SecondaryDark: Story = {
     args: {},
-    decorators: [ThemeDecorator(Theme.DARK)]
+    decorators: [ThemeDecorator(Theme.DARK)],
 };

@@ -8,7 +8,7 @@ const meta = {
     parameters: {
         layout: '',
     },
-    decorators:[StoreDecorator({})],
+    decorators: [StoreDecorator({})],
     argTypes: {},
     args: {},
 } satisfies Meta<typeof ListBox>;
@@ -17,5 +17,5 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
-    args: {onChange: ()=>{}},
+    args: { onChange: () => {} },
 };

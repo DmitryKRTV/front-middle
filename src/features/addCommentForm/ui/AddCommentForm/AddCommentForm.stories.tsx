@@ -17,7 +17,6 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
-    args: {onSendComment: action('onSendComment'),},
-    decorators: [StoreDecorator({}),]
+    args: { onSendComment: action('onSendComment') },
+    decorators: [StoreDecorator({})],
 };
-

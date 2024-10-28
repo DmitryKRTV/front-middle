@@ -3,7 +3,7 @@ import { PluginItem } from '@babel/core';
 // выпиливает из продакшена заданные штуки за счет чего
 // уменьшает размер бандла
 
-export default (): PluginItem => { 
+export default (): PluginItem => {
     return {
         visitor: {
             Program(path, state) {

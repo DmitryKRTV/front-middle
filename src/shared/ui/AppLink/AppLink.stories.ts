@@ -21,15 +21,14 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
     args: {
         to: getRouteMain(),
-        children: "Main"
+        children: 'Main',
     },
-  
 };
 
 export const SecondaryDark: Story = {
     args: {
         to: getRouteAbout(),
-        children: "About"
+        children: 'About',
     },
-    decorators: [ThemeDecorator(Theme.DARK)]
+    decorators: [ThemeDecorator(Theme.DARK)],
 };

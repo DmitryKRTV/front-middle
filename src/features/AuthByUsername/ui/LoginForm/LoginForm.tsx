@@ -1,5 +1,8 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader';
+import {
+    DynamicModuleLoader,
+    ReducersList,
+} from '@/shared/lib/components/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { Input } from '@/shared/ui/Input';
@@ -32,13 +35,19 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
     const isLoading = useSelector(getLoginIsLoading);
     const error = useSelector(getLoginError);
 
-    const onChangeUsername = useCallback((value: string) => {
-        dispatch(loginActions.setUsername(value));
-    }, [dispatch]);
+    const onChangeUsername = useCallback(
+        (value: string) => {
+            dispatch(loginActions.setUsername(value));
+        },
+        [dispatch],
+    );
 
-    const onChangePassword = useCallback((value: string) => {
-        dispatch(loginActions.setPassword(value));
-    }, [dispatch]);
+    const onChangePassword = useCallback(
+        (value: string) => {
+            dispatch(loginActions.setPassword(value));
+        },
+        [dispatch],
+    );
 
     const onLoginClick = useCallback(async () => {
         const result = await dispatch(loginByUsername({ username, password }));
@@ -48,13 +57,15 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
     }, [onSuccess, dispatch, password, username]);
 
     return (
-        <DynamicModuleLoader
-            removeAfterUnmount
-            reducers={initialReducers}
-        >
+        <DynamicModuleLoader removeAfterUnmount reducers={initialReducers}>
             <div className={classNames(cls.LoginForm, {}, [className])}>
                 <Text title={t('Форма авторизации')} />
-                {error && <Text text={t('Вы ввели неверный логин или пароль')} theme={TextTheme.ERROR} />}
+                {error && (
+                    <Text
+                        text={t('Вы ввели неверный логин или пароль')}
+                        theme={TextTheme.ERROR}
+                    />
+                )}
                 <Input
                     autofocus
                     type="text"

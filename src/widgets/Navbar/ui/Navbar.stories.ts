@@ -22,7 +22,8 @@ export const Primary: Story = {
     decorators: [
         StoreDecorator({
             user: { authData: {} },
-        })]
+        }),
+    ],
 };
 
 export const SecondaryDark: Story = {
@@ -31,8 +32,8 @@ export const SecondaryDark: Story = {
         StoreDecorator({
             user: { authData: {} },
         }),
-        ThemeDecorator(Theme.DARK)
-    ]
+        ThemeDecorator(Theme.DARK),
+    ],
 };
 
 export const AuthNavbar: Story = {
@@ -40,5 +41,6 @@ export const AuthNavbar: Story = {
     decorators: [
         StoreDecorator({
             user: { authData: {} },
-        })]
+        }),
+    ],
 };

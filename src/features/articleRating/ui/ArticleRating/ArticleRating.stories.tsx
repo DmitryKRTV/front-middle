@@ -24,7 +24,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
     args: {
-        articleId: 'story-a-id-1'
+        articleId: 'story-a-id-1',
     },
     parameters: {
         mockData: [
@@ -39,13 +39,12 @@ export const Primary: Story = {
                 ],
             },
         ],
-    }
+    },
 };
-
 
 export const WithoutRate: Story = {
     args: {
-        articleId: 'story-a-id-2'
+        articleId: 'story-a-id-2',
     },
     parameters: {
         mockData: [
@@ -53,8 +52,8 @@ export const WithoutRate: Story = {
                 url: `${__API__}/article-ratings?userId=1&articleId=1`,
                 method: 'GET',
                 status: 200,
-                response: [ ],
+                response: [],
             },
         ],
-    }
+    },
 };

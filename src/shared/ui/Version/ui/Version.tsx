@@ -4,7 +4,7 @@ import cls from './Version.module.scss';
 import raw from '/version.txt';
 
 interface VersionProps {
-    className?: string
+    className?: string;
 }
 
 export const Version = (props: VersionProps) => {
@@ -22,10 +22,10 @@ export const Version = (props: VersionProps) => {
                 console.error('Error reading file:', error);
             }
         };
-    
+
         readFile();
     }, []);
-    
+
     return (
         <div className={classNames(cls.Version, {}, [className])}>
             <div>{fileContent}</div>

@@ -1,14 +1,12 @@
-import { Profile } from "@/entities/Profile";
-import { ValidateProfileError } from "../../consts/editableProfileCardSchema";
+import { Profile } from '@/entities/Profile';
+import { ValidateProfileError } from '../../consts/editableProfileCardSchema';
 
 export const validateProfileData = (profile?: Profile) => {
     if (!profile) {
         return [ValidateProfileError.NO_DATA];
     }
 
-    const {
-        first, lastname, age, country,
-    } = profile;
+    const { first, lastname, age, country } = profile;
 
     const errors: ValidateProfileError[] = [];
 

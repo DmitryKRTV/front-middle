@@ -58,9 +58,11 @@ const article: Article = {
 
 export const Primary: Story = {
     args: {},
-    decorators: [StoreDecorator({
-        articleDetails: {
-            data: article,
-        },
-    })]
+    decorators: [
+        StoreDecorator({
+            articleDetails: {
+                data: article,
+            },
+        }),
+    ],
 };

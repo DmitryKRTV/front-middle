@@ -3,7 +3,8 @@ import { ArticleDetailsPageSchema } from '../types';
 import { articleDetailsCommentsReducer } from './articleDetailsCommentsSlice';
 import { articleDetailsPageRecommendationsReducer } from './articleDetailsPageRecommendationsSlice';
 
-export const articleDetailsPageReducer = combineReducers<ArticleDetailsPageSchema>({
-    comments: articleDetailsCommentsReducer as any,
-    recommendations: articleDetailsPageRecommendationsReducer as any,
-});
+export const articleDetailsPageReducer =
+    combineReducers<ArticleDetailsPageSchema>({
+        comments: articleDetailsCommentsReducer as any,
+        recommendations: articleDetailsPageRecommendationsReducer as any,
+    });

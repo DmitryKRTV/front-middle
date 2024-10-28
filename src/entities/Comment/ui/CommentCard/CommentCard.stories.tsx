@@ -21,8 +21,8 @@ export const Primary: Story = {
             text: 'test comment',
             user: {
                 id: '2',
-                username: 'test username'
-            }
-        }
+                username: 'test username',
+            },
+        },
     },
 };

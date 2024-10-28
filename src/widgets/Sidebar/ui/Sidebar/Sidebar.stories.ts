@@ -24,12 +24,15 @@ export const Primary: Story = {
         StoreDecorator({
             user: { authData: {} },
         }),
-    ]
+    ],
 };
 
 export const SecondaryDark: Story = {
     args: {},
-    decorators: [ThemeDecorator(Theme.DARK), StoreDecorator({
-        user: { authData: {} },
-    }),]
+    decorators: [
+        ThemeDecorator(Theme.DARK),
+        StoreDecorator({
+            user: { authData: {} },
+        }),
+    ],
 };

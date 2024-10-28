@@ -22,5 +22,5 @@ export const Primary: Story = {
 
 export const SecondaryDark: Story = {
     args: {},
-    decorators: [ThemeDecorator(Theme.DARK)]
+    decorators: [ThemeDecorator(Theme.DARK)],
 };

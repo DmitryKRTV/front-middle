@@ -6,8 +6,7 @@ import { Input } from './Input';
 const meta = {
     title: 'shared/Input',
     component: Input,
-    parameters: {
-    },
+    parameters: {},
     argTypes: {},
     args: {},
 } satisfies Meta<typeof Input>;
@@ -27,5 +26,5 @@ export const SecondaryDark: Story = {
         placeholder: 'Type text',
         value: '123123',
     },
-    decorators: [ThemeDecorator(Theme.DARK)]
+    decorators: [ThemeDecorator(Theme.DARK)],
 };

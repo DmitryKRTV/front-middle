@@ -17,6 +17,6 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
     args: {
-        view: ArticleView.SMALL
+        view: ArticleView.SMALL,
     },
 };

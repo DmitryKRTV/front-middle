@@ -33,4 +33,3 @@ describe('fetchProfileData.test', () => {
         expect(result.meta.requestStatus).toBe('rejected');
     });
 });
-

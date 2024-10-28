@@ -16,7 +16,6 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
-    args: {id: "1"},
-    decorators: [StoreDecorator({}),]
+    args: { id: '1' },
+    decorators: [StoreDecorator({})],
 };
-

@@ -20,13 +20,13 @@ export const App = () => {
 
     return (
         <div className={classNames(`app`, {}, [theme])}>
-            <Suspense fallback={<PageLoader/>}>
-                <Navbar/>
+            <Suspense fallback={<PageLoader />}>
+                <Navbar />
                 <div className="content-page">
                     <Sidebar />
                     {inited && <AppRouter />}
                 </div>
-                <Version/>
+                <Version />
             </Suspense>
         </div>
     );

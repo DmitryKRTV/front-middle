@@ -1,5 +1,5 @@
 import { withThemeByClassName } from '@storybook/addon-themes';
-import type { Preview } from "@storybook/react";
+import type { Preview } from '@storybook/react';
 import { BrowserRouterDecorator } from '../../src/shared/config/storybook/Decorators/BrowserRouterDecorator';
 import { StyleDecorator } from '../../src/shared/config/storybook/Decorators/StyleDecorator';
 import { SuspenseDecorator } from '../../src/shared/config/storybook/Decorators/SuspenseDecorator';
@@ -24,13 +24,11 @@ const preview: Preview = {
             themes: {
                 light: Theme.LIGHT,
                 dark: Theme.DARK,
-                orange: Theme.ORANGE
+                orange: Theme.ORANGE,
             },
             defaultTheme: 'light',
         }),
     ],
 };
-
-
 
 export default preview;

@@ -44,10 +44,10 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
     args: {},
-    decorators: [StoreDecorator({}),]
+    decorators: [StoreDecorator({})],
 };
 
 export const SecondaryDark: Story = {
     args: {},
-    decorators: [ThemeDecorator(Theme.DARK), StoreDecorator({}),]  
+    decorators: [ThemeDecorator(Theme.DARK), StoreDecorator({})],
 };

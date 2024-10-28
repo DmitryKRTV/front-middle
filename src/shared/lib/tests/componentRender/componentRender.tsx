@@ -4,9 +4,9 @@ import { ThemeProvider } from '@/app/providers/theme';
 import i18nForTests from '@/shared/config/i18n/i18nForTests';
 import { Theme } from '@/shared/const/theme';
 import { render } from '@testing-library/react';
-import { ReactNode } from "react";
-import { I18nextProvider } from "react-i18next";
-import { MemoryRouter } from "react-router-dom";
+import { ReactNode } from 'react';
+import { I18nextProvider } from 'react-i18next';
+import { MemoryRouter } from 'react-router-dom';
 import { ReducersMapObject } from 'redux';
 // eslint-disable-next-line krtv-plugin/layer-imports
 import '@/app/styles/index.scss';
@@ -23,8 +23,7 @@ interface TestProviderProps {
     options?: componentRenderOptions;
 }
 
-export function 
-TestProvider(props: TestProviderProps) {
+export function TestProvider(props: TestProviderProps) {
     const { children, options = {} } = props;
     const {
         route = '/',
@@ -35,12 +34,13 @@ TestProvider(props: TestProviderProps) {
 
     return (
         <MemoryRouter initialEntries={[route]}>
-            <StoreProvider asyncReducers={asyncReducers} initialState={initialState}>
+            <StoreProvider
+                asyncReducers={asyncReducers}
+                initialState={initialState}
+            >
                 <I18nextProvider i18n={i18nForTests}>
                     <ThemeProvider initialTheme={theme}>
-                        <div className={`app ${theme}`}>
-                            {children}
-                        </div>
+                        <div className={`app ${theme}`}>{children}</div>
                     </ThemeProvider>
                 </I18nextProvider>
             </StoreProvider>
@@ -48,6 +48,9 @@ TestProvider(props: TestProviderProps) {
     );
 }
 
-export function componentRender(component: ReactNode, options: componentRenderOptions = {}) {
+export function componentRender(
+    component: ReactNode,
+    options: componentRenderOptions = {},
+) {
     return render(<TestProvider options={options}>{component}</TestProvider>);
 }

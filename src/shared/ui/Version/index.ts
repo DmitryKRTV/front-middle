@@ -1,1 +1,1 @@
-export { Version } from "./ui/Version";
+export { Version } from './ui/Version';

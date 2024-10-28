@@ -1,4 +1,8 @@
-import { ReduxStoreWithManager, StateSchema, StateSchemaKey } from '@/app/providers/StoreProvider';
+import {
+    ReduxStoreWithManager,
+    StateSchema,
+    StateSchemaKey,
+} from '@/app/providers/StoreProvider';
 import { Reducer } from '@reduxjs/toolkit';
 import { ReactNode, useEffect } from 'react';
 import { useDispatch, useStore } from 'react-redux';
@@ -15,7 +19,7 @@ interface DynamicModuleLoaderProps {
 
 export const DynamicModuleLoader = (props: DynamicModuleLoaderProps) => {
     const { children, reducers, removeAfterUnmount = false } = props;
-    
+
     const store = useStore() as ReduxStoreWithManager;
     const dispatch = useDispatch();
 
@@ -40,8 +44,5 @@ export const DynamicModuleLoader = (props: DynamicModuleLoaderProps) => {
         // eslint-disable-next-line
     }, []);
 
-    return (
-         
-        <>{children}</>
-    );
+    return <>{children}</>;
 };

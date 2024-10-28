@@ -25,9 +25,9 @@ export const Primary: Story = {
 };
 
 export const Small: Story = {
-    args:  {
+    args: {
         size: 50,
         src: AvatarImg,
     },
-    decorators: [ThemeDecorator(Theme.DARK)]
+    decorators: [ThemeDecorator(Theme.DARK)],
 };

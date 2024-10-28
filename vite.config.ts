@@ -5,9 +5,9 @@ import svgr from 'vite-plugin-svgr';
 
 // https://vite.dev/config/
 export default defineConfig({
-    plugins: [svgr({ include: "**/*.svg", }), react()],
+    plugins: [svgr({ include: '**/*.svg' }), react()],
     resolve: {
-        alias: [{ find: '@', replacement: path.resolve(__dirname, "./src") }],
+        alias: [{ find: '@', replacement: path.resolve(__dirname, './src') }],
     },
     define: {
         __IS_DEV__: JSON.stringify(true),
@@ -28,8 +28,8 @@ export default defineConfig({
     css: {
         preprocessorOptions: {
             scss: {
-                api: 'modern-compiler' // or "modern"
-            }
-        }
-    }
+                api: 'modern-compiler', // or "modern"
+            },
+        },
+    },
 });

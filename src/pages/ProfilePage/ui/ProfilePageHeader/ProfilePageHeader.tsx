@@ -1,5 +1,10 @@
 import { getUserAuthData } from '@/entities/User';
-import { getProfileData, getProfileReadonly, profileActions, updateProfileData } from '@/features/editableProfileCard';
+import {
+    getProfileData,
+    getProfileReadonly,
+    profileActions,
+    updateProfileData,
+} from '@/features/editableProfileCard';
 import { classNames } from '@/shared/lib/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
@@ -14,9 +19,7 @@ interface ProfilePageHeaderProps {
 }
 
 export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
-    const {
-        className,
-    } = props;
+    const { className } = props;
 
     const { t } = useTranslation('profile');
     const authData = useSelector(getUserAuthData);
@@ -38,35 +41,34 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
     }, [dispatch]);
 
     return (
-        <HStack max justify="between" className={classNames('', {}, [className])}>
+        <HStack
+            max
+            justify="between"
+            className={classNames('', {}, [className])}
+        >
             <Text title={t('Профиль')} />
             {canEdit && (
                 <div>
-                    {readonly
-                        ? (
+                    {readonly ? (
+                        <Button theme={ButtonTheme.OUTLINE} onClick={onEdit}>
+                            {t('Редактировать')}
+                        </Button>
+                    ) : (
+                        <HStack gap="8">
+                            <Button
+                                theme={ButtonTheme.OUTLINE_RED}
+                                onClick={onCancelEdit}
+                            >
+                                {t('Отменить')}
+                            </Button>
                             <Button
                                 theme={ButtonTheme.OUTLINE}
-                                onClick={onEdit}
+                                onClick={onSave}
                             >
-                                {t('Редактировать')}
+                                {t('Сохранить')}
                             </Button>
-                        )
-                        : (
-                            <HStack gap="8">
-                                <Button
-                                    theme={ButtonTheme.OUTLINE_RED}
-                                    onClick={onCancelEdit}
-                                >
-                                    {t('Отменить')}
-                                </Button>
-                                <Button
-                                    theme={ButtonTheme.OUTLINE}
-                                    onClick={onSave}
-                                >
-                                    {t('Сохранить')}
-                                </Button>
-                            </HStack>
-                        )}
+                        </HStack>
+                    )}
                 </div>
             )}
         </HStack>

@@ -1,4 +1,3 @@
-
 import { ArticleList } from '@/entities/Article';
 import { Text } from '@/shared/ui/Text';
 import { memo } from 'react';

@@ -29,21 +29,21 @@ export const Error: Story = {
         text: 'Description Description Description Description',
         theme: TextTheme.ERROR,
     },
-    decorators: []
+    decorators: [],
 };
 
 export const OnlyTitle: Story = {
     args: {
         title: 'Title lorem ipsun',
     },
-    decorators: []
+    decorators: [],
 };
 
 export const OnlyText: Story = {
     args: {
         text: 'Description Description Description Description',
     },
-    decorators: []
+    decorators: [],
 };
 
 export const PrimaryDark: Story = {
@@ -51,14 +51,14 @@ export const PrimaryDark: Story = {
         title: 'Title lorem ipsun',
         text: 'Description Description Description Description',
     },
-    decorators: [ThemeDecorator(Theme.DARK)]
+    decorators: [ThemeDecorator(Theme.DARK)],
 };
 
 export const OnlyTitleDark: Story = {
     args: {
         title: 'Title lorem ipsun',
     },
-    decorators: [ThemeDecorator(Theme.DARK)]
+    decorators: [ThemeDecorator(Theme.DARK)],
 };
 
 export const OnlyTitlSizeLeDark: Story = {
@@ -67,5 +67,5 @@ export const OnlyTitlSizeLeDark: Story = {
         text: 'Description Description Description Description',
         size: TextSize.L,
     },
-    decorators: [ThemeDecorator(Theme.DARK)]
+    decorators: [ThemeDecorator(Theme.DARK)],
 };
