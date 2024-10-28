@@ -99,6 +99,6 @@ export default [
         },
     },
     {
-        ignores: ["cypress/*"]
+        ignores: ["cypress/*", ".deploy/*"]
     }
 ];
