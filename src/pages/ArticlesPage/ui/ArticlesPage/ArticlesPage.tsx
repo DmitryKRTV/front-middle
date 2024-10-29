@@ -10,6 +10,7 @@ import { useTranslation } from 'react-i18next';
 import { useSearchParams } from 'react-router-dom';
 import { Page } from '../../../../widgets/Page/Page';
 
+import { ArticlePageGreeting } from '@/features/articlePageGreeting';
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import { articlesPageReducer } from '../../model/slices/articlesPageSlice';
@@ -48,6 +49,7 @@ const ArticlesPage = (props: ArticlesPageProps) => {
             >
                 <ArticlesPageFilters />
                 <ArticleInfiniteList className={cls.list} />
+                <ArticlePageGreeting />
             </Page>
         </DynamicModuleLoader>
     );
