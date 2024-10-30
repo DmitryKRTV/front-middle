@@ -1,6 +1,7 @@
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
 import avatar from '@/shared/assets/tests/storybook.jpg';
+import { NewDesignDecorator } from '@/shared/config/storybook/Decorators/NewDesignDecorator';
 import { ThemeDecorator } from '@/shared/config/storybook/Decorators/ThemeDecorator';
 import { Theme } from '@/shared/const/theme';
 import type { Meta, StoryObj } from '@storybook/react';
@@ -32,6 +33,22 @@ export const Primary: Story = {
             avatar,
         },
     },
+};
+
+export const PrimaryRedisugned: Story = {
+    args: {
+        data: {
+            username: 'admin',
+            age: 22,
+            country: Country.Ukraine,
+            lastname: 'ulbi tv',
+            first: 'asd',
+            city: 'asf',
+            currency: Currency.USD,
+            avatar,
+        },
+    },
+    decorators: [NewDesignDecorator],
 };
 
 export const Error: Story = {

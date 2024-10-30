@@ -8,12 +8,13 @@ import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 import { PageLoader } from '@/shared/ui/deprecated/PageLoader';
 import { Navbar } from '@/widgets/Navbar';
 import { Sidebar } from '@/widgets/Sidebar';
-import { Suspense, useEffect } from 'react';
+import { memo, Suspense, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useAppToolbar } from './lib/useAppToolbar';
 import { AppRouter } from './providers/router/ui/AppRouter';
+import { withTheme } from './providers/theme/ui/withTheme';
 
-function App() {
+const App = memo(() => {
     const { theme } = useTheme();
     const dispatch = useAppDispatch();
     const inited = useSelector(getUserInited);
@@ -73,6 +74,6 @@ function App() {
             }
         />
     );
-}
+});
 
-export default App;
+export default withTheme(App);

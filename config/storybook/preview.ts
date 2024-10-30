@@ -1,6 +1,7 @@
 import { withThemeByClassName } from '@storybook/addon-themes';
 import type { Preview } from '@storybook/react';
 import { BrowserRouterDecorator } from '../../src/shared/config/storybook/Decorators/BrowserRouterDecorator';
+import { FeaturesFlagsDecorator } from '../../src/shared/config/storybook/Decorators/FeaturesFlagsDecorator';
 import { StyleDecorator } from '../../src/shared/config/storybook/Decorators/StyleDecorator';
 import { SuspenseDecorator } from '../../src/shared/config/storybook/Decorators/SuspenseDecorator';
 import { ThemeDecorator } from '../../src/shared/config/storybook/Decorators/ThemeDecorator';
@@ -28,6 +29,7 @@ const preview: Preview = {
             },
             defaultTheme: 'light',
         }),
+        FeaturesFlagsDecorator({}),
     ],
 };
 

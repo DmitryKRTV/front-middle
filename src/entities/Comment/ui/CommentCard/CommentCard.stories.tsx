@@ -1,3 +1,4 @@
+import { FeaturesFlagsDecorator } from '@/shared/config/storybook/Decorators/FeaturesFlagsDecorator';
 import type { Meta, StoryObj } from '@storybook/react';
 import { CommentCard } from './CommentCard';
 
@@ -25,4 +26,18 @@ export const Primary: Story = {
             },
         },
     },
+};
+
+export const PrimaryRedisugned: Story = {
+    args: {
+        comment: {
+            id: '1',
+            text: 'test comment',
+            user: {
+                id: '2',
+                username: 'test username',
+            },
+        },
+    },
+    decorators: [FeaturesFlagsDecorator({ isAppRedesigned: true })],
 };
