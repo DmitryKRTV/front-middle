@@ -1,11 +1,11 @@
+import { getArticleDetailsData } from '@/entities/Article';
+import { getRouteArticleEdit } from '@/shared/const/router';
+import { Card } from '@/shared/ui/redesigned/Card';
+import { ArticleAdditionalInfo } from '@/widgets/ArticleAdditionalInfo';
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { Card } from '@/shared/ui/redesigned/Card';
-import { ArticleAdditionalInfo } from '@/widgets/ArticleAdditionalInfo';
-import { getArticleDetailsData } from '@/entities/Article';
 import cls from './AdditionalInfoContainer.module.scss';
-import { getRouteArticleEdit } from '@/shared/const/router';
 
 export const AdditionalInfoContainer = memo(() => {
     const article = useSelector(getArticleDetailsData);
@@ -23,7 +23,7 @@ export const AdditionalInfoContainer = memo(() => {
     }
 
     return (
-        <Card padding="24" border="round" className={cls.card}>
+        <Card padding="24" border="partial" className={cls.card}>
             <ArticleAdditionalInfo
                 onEdit={onEditArticle}
                 author={article.user}
