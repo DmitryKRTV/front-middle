@@ -8,7 +8,7 @@ import {
 } from '@/shared/lib/components/DynamicModuleLoader';
 import { ToggleFeatures } from '@/shared/lib/features/ToggleFeatures/ToggleFeatures';
 import { Card } from '@/shared/ui/deprecated/Card';
-import { VStack } from '@/shared/ui/deprecated/Stack';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 import { Page } from '@/widgets/Page';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';

@@ -7,8 +7,8 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { AppLink, AppLinkTheme } from '@/shared/ui/deprecated/AppLink';
 import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
-import { HStack } from '@/shared/ui/deprecated/Stack';
 import { Text, TextTheme } from '@/shared/ui/deprecated/Text';
+import { HStack } from '@/shared/ui/redesigned/Stack';
 import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
@@ -51,7 +51,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                     <header className={classNames(cls.Navbar, {}, [className])}>
                         <Text
                             className={cls.appName}
-                            title={t('KRTV App')}
+                            title={t('Ulbi TV App')}
                             theme={TextTheme.INVERTED}
                         />
                         <AppLink

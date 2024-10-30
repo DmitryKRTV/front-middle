@@ -20,8 +20,8 @@ if (featureState !== 'on' && featureState !== 'off') {
 
 const project = new Project({});
 
-project.addSourceFilesAtPaths('src/**/*.ts');
-project.addSourceFilesAtPaths('src/**/*.tsx');
+project.addSourceFilesAtPaths('src/**/ArticleDetailsPage.ts');
+project.addSourceFilesAtPaths('src/**/ArticleDetailsPage.tsx');
 
 const files = project.getSourceFiles();
 
@@ -84,8 +84,8 @@ const getAttributeNodeByName = (
     jsxAttributes: JsxAttribute[],
     name: string,
 ) => {
-    // return jsxAttributes.find((node) => node.getName() === name);
     return jsxAttributes.find((node) => node.getStructure().name === name);
+    // return jsxAttributes.find((node) => node.getName() === name);
 };
 
 const getReplacedComponent = (attribute?: JsxAttribute) => {
