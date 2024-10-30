@@ -11,7 +11,7 @@
     
     .addonRight svg, .addonLeft svg {
         color: var(--hint-redesigned);
-    }
+    }    
 
     &:hover {
         color: var(--accent-redesigned);
@@ -38,6 +38,16 @@
     border: none;
     outline: none;
     border-radius: 34px;
+}
+
+.outline {
+    background: none;
+    border: 1px solid var(--icon-redesigned);
+    border-radius: 34px;
+
+    &:hover {
+        border: 1px solid var(--accent-redesigned);
+    }
 }
 
 .square {
