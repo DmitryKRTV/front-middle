@@ -6,7 +6,6 @@ import {
     getRouteProfile,
 } from '@/shared/const/router';
 import { toggleFeatures } from '@/shared/lib/features';
-import { createSelector } from '@reduxjs/toolkit';
 import { FC, SVGProps } from 'react';
 
 import AboutIconDeprecated from '@/shared/assets/icons/about-20-20.svg';
@@ -18,6 +17,7 @@ import ArticleIcon from '@/shared/assets/icons/article.svg';
 import ProfileIcon from '@/shared/assets/icons/avatar.svg';
 import MainIcon from '@/shared/assets/icons/home.svg';
 import AboutIcon from '@/shared/assets/icons/Info.svg';
+import { useSelector } from 'react-redux';
 
 export interface SidebarItemType {
     path: string;
@@ -26,7 +26,8 @@ export interface SidebarItemType {
     authOnly?: boolean;
 }
 
-export const getSidebarItems = createSelector(getUserAuthData, (userData) => {
+export const useSidebarItems = () => {
+    const userData = useSelector(getUserAuthData);
     const sidebarItemsList: SidebarItemType[] = [
         {
             path: getRouteMain(),
@@ -74,4 +75,4 @@ export const getSidebarItems = createSelector(getUserAuthData, (userData) => {
     }
 
     return sidebarItemsList;
-});
+};
