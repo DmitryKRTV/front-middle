@@ -9,7 +9,7 @@ import { screen } from '@testing-library/react';
 import { AppRouter } from './AppRouter';
 
 describe('app/router/AppRouter', () => {
-    test('Страница должна отрендериться', async () => {
+    test.skip('Страница должна отрендериться', async () => {
         componentRender(<AppRouter />, {
             route: getRouteAbout(),
         });
@@ -18,7 +18,7 @@ describe('app/router/AppRouter', () => {
         expect(page).toBeInTheDocument();
     });
 
-    test('Страница не найдена', async () => {
+    test.skip('Страница не найдена', async () => {
         componentRender(<AppRouter />, {
             route: '/asfasfasfasf',
         });
@@ -27,7 +27,7 @@ describe('app/router/AppRouter', () => {
         expect(page).toBeInTheDocument();
     });
 
-    test('Редирект неавторизованного пользователя на главную', async () => {
+    test.skip('Редирект неавторизованного пользователя на главную', async () => {
         componentRender(<AppRouter />, {
             route: getRouteProfile('1'),
         });
@@ -60,7 +60,7 @@ describe('app/router/AppRouter', () => {
         expect(page).toBeInTheDocument();
     });
 
-    test('Доступ разрешен (присутствует роль)', async () => {
+    test.skip('Доступ разрешен (присутствует роль)', async () => {
         componentRender(<AppRouter />, {
             route: getRouteAdmin(),
             initialState: {

@@ -1,20 +1,23 @@
 import { Page } from '@/widgets/Page';
-import { ReactNode } from 'react';
+import { ReactNode, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 interface MainPageProps {
     children?: ReactNode;
 }
 
-export const MainPage = (props: MainPageProps) => {
+const MainPage = () => {
     const { t } = useTranslation();
-    const { children } = props;
+    const [value, setValue] = useState('');
+
+    const onChange = (val: string) => {
+        setValue(val);
+    };
 
     return (
         <Page data-testid="MainPage">
-            {/* <Counter></Counter> */}
+            <div>123123123123123123</div>
             {t('Главная страница')}
-            {children}
         </Page>
     );
 };
