@@ -1,6 +1,6 @@
 import { getArticleDetailsData } from '@/entities/Article';
 import { getRouteArticleEdit, getRouteArticles } from '@/shared/const/router';
-import { classNames } from '@/shared/lib/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
 import { HStack } from '@/shared/ui/redesigned/Stack';
 import { memo, useCallback } from 'react';
@@ -26,8 +26,10 @@ export const ArticleDetailsPageHeader = memo(
         }, [navigate]);
 
         const onEditArticle = useCallback(() => {
-            navigate(getRouteArticleEdit(article?.id));
-        }, [article?.id, navigate]);
+            if (article) {
+                navigate(getRouteArticleEdit(article.id));
+            }
+        }, [article, navigate]);
 
         return (
             <HStack
