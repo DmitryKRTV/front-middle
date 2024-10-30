@@ -1,5 +1,5 @@
 import { AppRoutesProps } from '@/shared/types/router';
-import { PageLoader } from '@/shared/ui/PageLoader';
+import { PageLoader } from '@/shared/ui/deprecated/PageLoader';
 import { memo, Suspense, useCallback } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { routeConfig } from '../config/routeConfig';

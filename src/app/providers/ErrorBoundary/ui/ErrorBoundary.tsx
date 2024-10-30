@@ -1,4 +1,4 @@
-import { PageLoader } from '@/shared/ui/PageLoader';
+import { PageLoader } from '@/shared/ui/deprecated/PageLoader';
 import { ErrorPage } from '@/widgets/ErrorPage';
 import React, { ErrorInfo, ReactNode, Suspense } from 'react';
 

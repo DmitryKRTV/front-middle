@@ -1,10 +1,10 @@
 import { ThemeSwitcher } from '@/features/ThemeSwitcher';
 import { classNames } from '@/shared/lib/classNames';
 import { ToggleFeatures } from '@/shared/lib/features';
-import { AppLogo } from '@/shared/ui/AppLogo';
-import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/Button';
-import { LangSwitcher } from '@/shared/ui/LangSwitcher';
-import { VStack } from '@/shared/ui/Stack';
+import { AppLogo } from '@/shared/ui/deprecated/AppLogo';
+import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/deprecated/Button';
+import { LangSwitcher } from '@/shared/ui/deprecated/LangSwitcher';
+import { VStack } from '@/shared/ui/deprecated/Stack';
 import { memo, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
